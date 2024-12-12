@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Tag Pseudo-Classes Demo</title>
+    <style>
+        /* ==========================
+           Basic Anchor Styling
+           ========================== */
+        /* Default styling for all <a> tags */
+        a {
+            text-decoration: none; /* Remove default underline */
+            color: #1e88e5; /* Blue color for links */
+            font-size: 18px; /* Set font size */
+            padding: 8px 16px; /* Padding inside the link */
+            transition: all 0.3s ease; /* Smooth transition for hover and active states */
+        }
+
+        /* ==========================
+           :visited Pseudo-class
+           ========================== */
+        /* Targets links that have already been visited */
+        a:visited {
+            color: #9c27b0; /* Purple color for visited links */
+        }
+
+        /* ==========================
+           :hover Pseudo-class
+           ========================== */
+        /* Targets links when they are hovered over */
+        a:hover {
+            background-color: #e3f2fd; /* Light blue background on hover */
+            color: #d32f2f; /* Red color for the text on hover */
+            border-radius: 5px; /* Round the corners of the background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+        }
+
+        /* ==========================
+           :active Pseudo-class
+           ========================== */
+        /* Targets links when they are clicked (active state) */
+        a:active {
+            color: #ffffff; /* White color for the text when active */
+            background-color: #d32f2f; /* Dark red background when active */
+            transform: scale(0.98); /* Slightly shrink the link on click */
+        }
+
+        /* ==========================
+           :focus Pseudo-class
+           ========================== */
+        /* Targets links when they are focused (via keyboard navigation) */
+        a:focus {
+            outline: 2px solid #4caf50; /* Green outline when focused */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Demo: Anchor Tag Pseudo-Classes</h1>
+    <p>Click on the links below to see the effects of various pseudo-classes:</p>
+
+    <ul>
+        <li><a href="https://www.example.com" target="_blank">Visit Example (Hover, Click, Visit)</a></li>
+        <li><a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia (Hover, Click, Visit)</a></li>
+        <li><a href="https://www.google.com" target="_blank">Visit Google (Hover, Click, Visit)</a></li>
+    </ul>
+
+    <p>Try clicking, hovering, and revisiting the links to see how the styles change based on the pseudo-classes.</p>
+
+</body>
+</html>
+
+<!--
+Explanation of CSS Pseudo-Classes Used:
+1. :visited:
+Purpose: This pseudo-class applies styles to links that the user has already visited. It helps to differentiate visited links from unvisited ones.
+2. :hover:
+Purpose: This pseudo-class applies styles when the user hovers the mouse pointer over the link. It's typically used to create interactive effects, such as changing the background or text color.
+3. :active:
+Purpose: This pseudo-class applies styles to the link when it is actively being clicked (i.e., when the mouse button is pressed down). This is often used to provide visual feedback for click actions.
+4. :focus (Bonus):
+Purpose: This pseudo-class applies styles when the link has keyboard focus (e.g., when it's selected using the Tab key or clicked).
+-->

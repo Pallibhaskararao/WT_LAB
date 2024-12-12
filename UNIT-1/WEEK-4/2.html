@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+    <style>
+        /* ========================== 
+           Element Selector (p)
+           ========================== */
+        /* Element selector targets all <p> tags on the page */
+        p {
+            margin: 20px; /* Adds a margin of 20px around the paragraph */
+            padding: 10px; /* Adds padding of 10px inside the paragraph */
+            border: 2px solid #333; /* Adds a solid border of 2px with dark color */
+            font-size: 16px; /* Sets font size to 16px */
+            background-color: #f9f9f9; /* Sets a light gray background color */
+        }
+
+        /* ========================== 
+           Class Selector (.highlight)
+           ========================== */
+        /* Class selector targets elements with the class "highlight" */
+        .highlight {
+            margin: 15px; /* Adds a margin of 15px around the element */
+            padding: 15px; /* Adds padding of 15px inside the element */
+            border: 3px solid #ff6347; /* Adds a solid border of 3px with a tomato color */
+            background-color: #ffebcd; /* Sets a light background color (BlanchedAlmond) */
+            font-weight: bold; /* Makes the text bold */
+        }
+
+        /* ========================== 
+           ID Selector (#uniqueBox)
+           ========================== */
+        /* ID selector targets an element with the ID "uniqueBox" */
+        #uniqueBox {
+            margin: 30px; /* Adds a margin of 30px around the div */
+            padding: 20px; /* Adds padding of 20px inside the div */
+            border: 4px dashed #4caf50; /* Adds a green dashed border of 4px */
+            background-color: #e0f7fa; /* Sets a light blue background */
+            font-size: 18px; /* Increases the font size to 18px */
+        }
+
+        /* ========================== 
+           Attribute Selector (a[href^="https"])
+           ========================== */
+        /* Attribute selector targets <a> tags where the href starts with "https" */
+        a[href^="https"] {
+            margin: 5px; /* Adds a margin of 5px around the link */
+            padding: 5px 10px; /* Adds horizontal padding of 10px and vertical padding of 5px */
+            border: 1px solid #1e88e5; /* Adds a blue border of 1px */
+            background-color: #c5cae9; /* Sets a light purple background */
+            text-decoration: none; /* Removes the underline from the link */
+        }
+
+        /* ========================== 
+           Pseudo-class Selector (:hover)
+           ========================== */
+        /* This selector applies styles to <a> elements when they are hovered */
+        a:hover {
+            background-color: #8e24aa; /* Changes background color to purple on hover */
+            color: white; /* Changes text color to white */
+            border-color: #ff4081; /* Changes border color to pink */
+        }
+
+        /* ========================== 
+           Pseudo-element Selector (::before)
+           ========================== */
+        /* The ::before pseudo-element adds content before the text of each paragraph */
+        p::before {
+            content: "▶ "; /* Adds a triangle symbol before each paragraph */
+            color: #ff6347; /* Colors the triangle with a tomato color */
+        }
+
+        /* ========================== 
+           Universal Selector (*)
+           ========================== */
+        /* The universal selector applies styles to all elements on the page */
+        * {
+            box-sizing: border-box; /* Ensures padding and borders don't affect element's width/height */
+        }
+
+        /* ========================== 
+           Grouping Selectors (h1, h2, p)
+           ========================== */
+        /* This groups the h1, h2, and p selectors to apply the same style to all */
+        h1, h2, p {
+            margin-bottom: 15px; /* Adds a bottom margin of 15px to all h1, h2, and p elements */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================
+         Section with Paragraph Element (p)
+         ============================ -->
+    <h1>CSS Selectors Demo</h1>
+    <h2>Element Selector Example</h2>
+    <!-- This paragraph is styled with the element selector (p) -->
+    <p>This paragraph uses the element selector (p) to apply margin, padding, and border.</p>
+
+    <!-- ============================
+         Section with Class Selector
+         ============================ -->
+    <h2>Class Selector Example</h2>
+    <!-- This paragraph is styled with the class selector (.highlight) -->
+    <p class="highlight">This paragraph uses the class selector (.highlight) with a different margin, padding, and border.</p>
+
+    <!-- ============================
+         Section with ID Selector
+         ============================ -->
+    <h2>ID Selector Example</h2>
+    <!-- This div is styled with the ID selector (#uniqueBox) -->
+    <div id="uniqueBox">
+        This div uses the ID selector (#uniqueBox) with a dashed border and a unique style.
+    </div>
+
+    <!-- ============================
+         Section with Attribute Selector
+         ============================ -->
+    <h2>Attribute Selector Example</h2>
+    <p>Click on the link below to see the attribute selector in action.</p>
+    <!-- This link is styled with the attribute selector (a[href^="https"]) -->
+    <a href="https://www.example.com">Visit Example (HTTPS)</a><br>
+    <a href="http://www.example.com">Visit Example (HTTP)</a> <!-- This link will not be styled as it doesn't start with https -->
+
+    <!-- ============================
+         Section with Pseudo-class Selector
+         ============================ -->
+    <h2>Pseudo-class Selector Example</h2>
+    <p>Hover over the link below to see the pseudo-class selector in action.</p>
+    <!-- This link is styled with the pseudo-class selector (a:hover) -->
+    <a href="https://www.example.com">Hover over this link</a>
+
+    <!-- ============================
+         Section with Pseudo-element Selector
+         ============================ -->
+    <h2>Pseudo-element Selector Example</h2>
+    <!-- This paragraph uses the pseudo-element selector (::before) to add a triangle before the text -->
+    <p>This paragraph uses the pseudo-element selector (::before) to add a triangle before the text.</p>
+
+</body>
+</html>
+
+<!--
+Explanation of Code:
+1. Element Selector
+Targets specific HTML elements by their tag name.
+2. Class Selector
+Targets elements with a specific class attribute.
+3. ID Selector
+Targets an element with a unique id.
+4. Attribute Selector
+Targets elements based on the value of an attribute.
+5. Pseudo-class Selector
+Targets an element in a specific state, such as :hover.
+6. Pseudo-element Selector
+Targets parts of an element, such as ::before and ::after.
+7. Universal Selector
+Applies styles to all elements on the page.
+8. Grouping Selectors
+Applies the same styles to multiple elements.
+-->

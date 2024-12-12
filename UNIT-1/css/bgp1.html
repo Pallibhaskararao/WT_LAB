@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Position Example</title>
+    <style>
+        /* Flex container to arrange divs in a row */
+        .container {
+            display: flex; /* Align the child divs in a row */
+            gap: 20px; /* Adds space between the divs */
+        }
+
+        /* Box 1: Background positioned at top-left */
+        .top-left {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/600x400/ff6347/ffffff?text=Image+1');
+            background-position: top left;
+            background-size: cover;
+            border: 2px solid #333;
+        }
+
+        /* Box 2: Background positioned at center */
+        .center {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/600x400/4682b4/ffffff?text=Image+2');
+            background-position: center;
+            background-size: cover;
+            border: 2px solid #333;
+        }
+
+        /* Box 3: Background positioned at bottom-right */
+        .bottom-right {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/600x400/32cd32/ffffff?text=Image+3');
+            background-position: bottom right;
+            background-size: cover;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Background Position with Different Images</h2>
+
+    <!-- Flexbox container for the divs -->
+    <div class="container">
+        <div class="top-left"></div>
+        <div class="center"></div>
+        <div class="bottom-right"></div>
+    </div>
+
+</body>
+</html>

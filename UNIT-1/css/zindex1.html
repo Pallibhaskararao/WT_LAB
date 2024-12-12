@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative Z-Index Example</title>
+    <style>
+        /* Container to hold all elements */
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+        }
+
+        /* Box 1 (at the back, z-index -1) */
+        .box1 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        /* Box 2 (in the middle, z-index 0) */
+        .box2 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 255, 0, 0.7);
+            z-index: 0;
+        }
+
+        /* Box 3 (at the front, z-index 2) */
+        .box3 {
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 0, 255, 0.1);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+</body>
+</html>
+
+<!--
+Explanation of the Negative z-index:
+Box 1 has a z-index of -1, which places it behind everything else in the stacking order, even if it is the first element defined in the HTML.
+Box 2 has a z-index of 0, and Box 3 has the highest z-index (2), making it appear in the front.-->

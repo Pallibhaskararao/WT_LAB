@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Frameset Example</title>
+</head>
+<frameset rows="30%, 60%, 10%">
+    <!-- Top Frame (Frame_1) -->
+    <frame src="frame1.html" name="Frame_1">
+
+    <!-- Middle Section with Nested Frames -->
+    <frameset cols="30%, 70%">
+        <!-- Left Frame (Frame_2) -->
+        <frame src="frame2.html" name="Frame_2">
+        <!-- Right Frame (Frame_3) -->
+        <frame src="frame3.html" name="Frame_3">
+    </frameset>
+
+    <!-- Bottom Frame (Frame_4) -->
+    <frame src="frame4.html" name="Frame_4">
+</frameset>
+<noframes>
+    <body>
+        <p>Your browser does not support frames. Please update your browser.</p>
+    </body>
+</noframes>
+</html>

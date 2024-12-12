@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Week Timetable</title>
+    <style>
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Class Timetable for the Week</h2>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+            <th>1:00 - 2:00</th>
+            <th>2:00 - 3:00</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Maths</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+            <td>Break</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>Computers</td>
+            <td>Maths</td>
+            <td>Physics</td>
+            <td>Break</td>
+            <td>Biology</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Chemistry</td>
+            <td>English</td>
+            <td>Computers</td>
+            <td>Break</td>
+            <td>Maths</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>Physics</td>
+            <td>Biology</td>
+            <td>Maths</td>
+            <td>Break</td>
+            <td>Chemistry</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>English</td>
+            <td>Computers</td>
+            <td>Physics</td>
+            <td>Break</td>
+            <td>Biology</td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td>Sports</td>
+            <td>Maths</td>
+            <td>Cultural Activities</td>
+            <td>Break</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td colspan="5">Holiday</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!--
+Explanation:
+Table Headers:
+
+The first row (<tr>) contains the days and time slots as headers (<th>). The th tags create bold and centered headers.
+Rows for Each Day:
+
+Each subsequent row (<tr>) contains the schedule for one day of the week.
+For example, Monday has subjects like "Maths," "Physics," and "Chemistry."
+Break Period:
+
+The "Break" period is added in each row using a <td> to clearly separate the academic sessions.
+Saturday:
+
+Saturday includes special activities like "Sports" and "Cultural Activities" alongside academic subjects.
+Sunday (Holiday):
+
+For Sunday, a single row spans across all columns using colspan="5" to indicate it is a holiday.
+Styling:
+
+Borders: Black borders (border: 1px solid black) surround all cells for a clear structure.
+Alignment: Text is centered inside all cells (text-align: center).
+Padding: Each cell has padding (padding: 10px) for better readability.
+Header Background: A light gray background color is added to headers using background-color: #f2f2f2.
+-->

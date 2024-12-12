@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox and Radio Button Form</title>
+</head>
+<body>
+
+    <h1>Preferences Form</h1>
+    <form action="/submit" method="POST">
+        
+        <h3>Do you agree to the terms?</h3>
+        <input type="checkbox" id="terms" name="terms" value="agree">
+        <label for="terms"> I agree to the terms and conditions.</label><br><br>
+
+        <h3>Choose your preferred method of contact:</h3>
+        <input type="radio" id="email" name="contact_method" value="email">
+        <label for="email">Email</label><br>
+        <input type="radio" id="phone" name="contact_method" value="phone">
+        <label for="phone">Phone</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

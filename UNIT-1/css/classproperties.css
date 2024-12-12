@@ -1,0 +1,26 @@
+/* Define font properties for elements with class 'header' */
+.header {
+    font-family: 'Arial', sans-serif;   /* Font family for header */
+    font-size: 2em;                     /* Font size for header */
+    font-weight: bold;                  /* Bold text for header */
+    color: #333;                        /* Dark gray color for the header text */
+    text-align: center;                 /* Center the header text */
+}
+
+/* Define font properties for elements with class 'content' */
+.content {
+    font-family: 'Georgia', serif;      /* Serif font family for content */
+    font-size: 1.2em;                   /* Font size for paragraphs */
+    font-style: italic;                 /* Italicized text */
+    line-height: 1.6;                   /* Line height for better readability */
+    color: #555;                        /* Lighter gray color for content text */
+}
+
+/* Define font properties for elements with class 'footer' */
+.footer {
+    font-family: 'Courier New', monospace; /* Monospace font for footer */
+    font-size: 1em;                        /* Normal font size */
+    font-weight: normal;                   /* Normal weight for footer text */
+    text-align: right;                     /* Align footer text to the right */
+    color: #888;                           /* Light gray color for footer */
+}

@@ -1,0 +1,79 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Default font for the page */
+    background-color: #f9f9f9; /* Light background color */
+    margin: 20px; /* Space around the page */
+    line-height: 1.5; /* Consistent line spacing */
+}
+
+/* Title styling */
+h1 {
+    text-align: center; /* Centers the title */
+    color: #4CAF50; /* Green text color */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Table styling */
+table {
+    width: 80%; /* Sets table width to 80% of the page */
+    margin: 0 auto; /* Centers the table horizontally */
+    border-collapse: collapse; /* Merges adjacent cell borders */
+    background-color: #ffffff; /* White background for the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Table header styling */
+thead th {
+    background-color: #4CAF50; /* Green background for the header */
+    color: white; /* White text color */
+    padding: 10px; /* Adds space inside header cells */
+    font-size: 18px; /* Increases header font size */
+}
+
+/* Table body rows styling */
+tbody tr {
+    border-bottom: 1px solid #ddd; /* Adds a border below each row */
+}
+
+/* Alternating row colors for the table body */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa; /* Light blue background on hover */
+}
+
+/* Table data cells styling */
+td {
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+    padding: 10px; /* Adds space inside cells */
+    font-size: 16px; /* Standard font size for table content */
+}
+
+/* Score column with specific width */
+td:last-child {
+    width: 100px; /* Sets width of the last column */
+    font-weight: bold; /* Makes the text bold */
+}
+
+<!-- Explanation of the Code
+Table Styling (table):
+The table is centered and takes up 80% of the page width.
+border-collapse merges adjacent cell borders for a cleaner look.
+A shadow effect is added for a subtle 3D appearance.
+Header Styling (thead th):
+Headers have a green background with white text for contrast.
+Padding inside header cells improves readability.
+Font size is increased to make the header stand out.
+Row Styling (tbody tr):
+Borders are added below rows for a clean table layout.
+Alternating row colors are applied using nth-child(even) for better readability.
+Hover effects change the background color to light blue.
+Cell Styling (td):
+Text is horizontally and vertically centered using text-align and vertical-align.
+Padding is added for spacing inside the cells.
+The last column (td:last-child) has a fixed width and bold text.
+Responsive Design:
+The table is responsive due to the use of percentages (width: 80%), making it adaptable to different screen sizes.-->

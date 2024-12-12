@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Enhanced Validation</title>
+</head>
+<body>
+
+<h2>Contact Us</h2>
+
+<form action="/submit_form" method="POST" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    // Function that validates the form fields
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Check if the Name field is empty
+        if (name === "") {
+            alert("Name must be filled out!");
+            return false; // Prevent form submission
+        }
+
+        // Check if the Email field is empty
+        if (email === "") {
+            alert("Email must be filled out!");
+            return false; // Prevent form submission
+        }
+
+        // Email format validation using a regular expression
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!email.match(emailPattern)) {
+            alert("Please enter a valid email address!");
+            return false; // Prevent form submission
+        }
+
+        // Check if the Message field is empty
+        if (message === "") {
+            alert("Message must be filled out!");
+            return false; // Prevent form submission
+        }
+
+        // If all validations pass, return true to allow form submission
+        return true;
+    }
+</script>
+
+</body>
+</html>

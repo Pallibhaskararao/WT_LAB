@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property Illustration</title>
+    <style>
+        /* Block elements take full width and stack vertically */
+        .block {
+            display: block;
+            width: 200px;
+            height: 100px;
+            background-color: #f2a900;
+            margin-bottom: 10px;
+        }
+
+        /* Inline elements only take up space as required by their content */
+        .inline {
+            display: inline;
+            background-color: #0099f2;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        /* Inline-block elements allow setting width and height while staying inline */
+        .inline-block {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            background-color: #32cd32;
+            margin-right: 10px;
+        }
+
+        /* Flex container with items aligned horizontally */
+        .flex-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6347;
+        }
+
+        /* Grid container with 2 columns */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .grid-item {
+            background-color: #dda0dd;
+            height: 100px;
+        }
+
+        /* Hidden content */
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Illustration of CSS Display Property</h2>
+
+    <div class="block">Block Element</div>
+
+    <span class="inline">Inline Element 1</span>
+    <span class="inline">Inline Element 2</span>
+
+    <div class="inline-block">Inline-Block Element 1</div>
+    <div class="inline-block">Inline-Block Element 2</div>
+
+    <div class="flex-container">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+    </div>
+
+    <div class="none">This will not be displayed</div>
+
+</body>
+</html>
+
+<!--
+Explanation of the Display Values:
+Block (display: block):
+The .block element is a block-level element. It takes up the full width available and creates a new line. It’s visually separated from other content.
+
+Inline (display: inline):
+The .inline elements do not start on a new line and only take up as much width as the content. They are placed side by side.
+
+Inline-Block (display: inline-block):
+The .inline-block elements stay in the same line but can have width and height defined like block elements. They are not as wide as block elements but allow you to control their dimensions.
+
+Flexbox (display: flex):
+The .flex-container is a flex container, and the .flex-item elements are flex items arranged in a horizontal row (default for flexbox). The items inside the container are aligned horizontally with a 10px gap between them.
+
+Grid (display: grid):
+The .grid-container defines a grid layout with two columns. The .grid-item elements will automatically arrange themselves into the grid layout, creating two columns.
+
+None (display: none):
+The .none element is not displayed at all. It is removed from the document flow and does not take up space. -->

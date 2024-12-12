@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Example</title>
+</head>
+<body>
+    <h1>Basic HTML Form</h1>
+    <!-- The form element starts here -->
+    <!-- 'action' specifies the URL where the form data will be sent -->
+    <!-- 'method' specifies the HTTP method used to submit the form -->
+    <form action="/submit" method="POST">
+
+        <!-- Label for the username field -->
+        <!-- 'for' attribute connects the label with the input via the input's 'id' -->
+        <label for="username">Username:</label>
+        <!-- 'type="text"' is used for single-line text input -->
+        <!--The id is needed for identification within the page (e.g., CSS or JavaScript), while the name is used for form submission and data processing. -->
+        <!-- 'required' makes this field mandatory -->
+        <input type="text" id="username" name="username" required>
+        <br><br>
+
+        <!-- Label for the password field -->
+        <label for="password">Password:</label>
+        <!-- 'type="password"' hides the user input for security -->
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <!-- Label for the email field -->
+        <label for="email">Email:</label>
+        <!-- 'type="email"' ensures the user enters a valid email address -->
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <!-- Radio buttons for selecting gender -->
+        <label>Gender:</label>
+        <!-- 'type="radio"' allows the user to select one option only -->
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br><br>
+
+        <!-- Dropdown menu for selecting a country -->
+        <label for="country">Country:</label>
+        <!-- The <select> element creates a dropdown menu -->
+        <select id="country" name="country">
+            <!-- Each <option> represents a single choice -->
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+        </select>
+        <br><br>
+
+        <!-- Textarea for entering a longer message -->
+        <label for="message">Message:</label><br>
+        <!-- 'rows' and 'cols' define the size of the text area -->
+        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        <br><br>
+
+        <!-- Checkbox for agreement -->
+        <!-- 'type="checkbox"' allows the user to make a binary choice -->
+        <input type="checkbox" id="agree" name="agree" value="yes" required>
+        <label for="agree">I agree to the terms and conditions</label>
+        <br><br>
+
+        <!-- Submit button to send the form data -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

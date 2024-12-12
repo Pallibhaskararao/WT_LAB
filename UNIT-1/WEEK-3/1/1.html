@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Frameset - Full Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; /* Use the full viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .frame {
+            border: 1px solid black; /* Add borders around frames */
+            display: flex;
+            justify-content: center; /* Center the text horizontally */
+            align-items: center; /* Center the text vertically */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrollbars if content overflows */
+        }
+
+        .frame1 {
+            height: 30%; /* Top frame occupies 30% height */
+        }
+
+        .middle-section {
+            height: 60%; /* Middle section occupies 60% height */
+            display: flex;
+        }
+
+        .frame2 {
+            width: 30%; /* Left frame occupies 30% of the width */
+        }
+
+        .frame3 {
+            width: 70%; /* Right frame occupies 70% of the width */
+        }
+
+        .frame4 {
+            height: 10%; /* Bottom frame occupies 10% height */
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Frame -->
+    <div class="frame frame1">
+        <div>
+            <h3>Frame_1</h3>
+            <p>This is the top frame displaying general information.</p>
+        </div>
+    </div>
+
+    <!-- Middle Frames -->
+    <div class="middle-section">
+        <!-- Left Frame -->
+        <div class="frame frame2">
+            <div>
+                <h3>Frame_2</h3>
+                <p>This frame is used for navigation links.</p>
+            </div>
+        </div>
+        <!-- Right Frame -->
+        <div class="frame frame3">
+            <div>
+                <h3>Frame_3</h3>
+                <p>This frame displays the main content area.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Frame -->
+    <div class="frame frame4">
+        <div>
+            <h3>Frame_4</h3>
+            <p>This is the footer frame with additional details or links.</p>
+        </div>
+    </div>
+</body>
+</html>

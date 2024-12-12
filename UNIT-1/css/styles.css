@@ -1,0 +1,104 @@
+/* General styles for the body of the webpage */
+body {
+    /* Sets the font family for the entire page */
+    font-family: Arial, sans-serif;
+
+    /* Adds a light gray background to the entire page */
+    background-color: #f9f9f9;
+
+    /* Adds padding inside the page content */
+    padding: 20px;
+}
+
+/* Styling for the main header (h1) */
+h1 {
+    /* Sets the color of the text */
+    color: #4CAF50;
+
+    /* Centers the text horizontally */
+    text-align: center;
+
+    /* Adds spacing below the header */
+    margin-bottom: 20px;
+}
+
+/* Styling for paragraphs (p) */
+p {
+    /* Sets the font size for the paragraph text */
+    font-size: 16px;
+
+    /* Sets the color of the text */
+    color: #555555;
+
+    /* Adds space between the lines of text */
+    line-height: 1.5;
+}
+
+/* Styling for the table */
+table {
+    /* Makes the table take up the full width of its container */
+    width: 100%;
+
+    /* Adds a border to the table */
+    border-collapse: collapse;
+
+    /* Adds spacing above the table */
+    margin-top: 20px;
+}
+
+/* Styling for table headers (th) */
+th {
+    /* Sets the background color for header cells */
+    background-color: #4CAF50;
+
+    /* Sets the color of the text in the header cells */
+    color: white;
+
+    /* Adds padding inside each header cell */
+    padding: 10px;
+}
+
+/* Styling for table rows (tr) */
+tr:nth-child(even) {
+    /* Sets a light gray background for even rows */
+    background-color: #f2f2f2;
+}
+
+/* Styling for table data cells (td) */
+td {
+    /* Adds padding inside each cell */
+    padding: 10px;
+
+    /* Aligns text to the left */
+    text-align: left;
+
+    /* Adds a border around each cell */
+    border: 1px solid #ddd;
+}
+
+/* Styling for the button inside the container */
+.button-container button {
+    /* Sets the background color for the button */
+    background-color: #4CAF50;
+
+    /* Sets the text color of the button */
+    color: white;
+
+    /* Removes the border around the button */
+    border: none;
+
+    /* Adds padding inside the button */
+    padding: 10px 20px;
+
+    /* Rounds the corners of the button */
+    border-radius: 5px;
+
+    /* Changes the cursor to a pointer on hover */
+    cursor: pointer;
+}
+
+/* Adding a hover effect to the button */
+.button-container button:hover {
+    /* Changes the background color on hover */
+    background-color: #45a049;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Example</title>
+    <style>
+        img {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Image Example</h2>
+    <p>This image will adjust based on the screen size using the <code>&lt;img&gt;</code> tag with <code>srcset</code> and <code>sizes</code> attributes.</p>
+
+    <!-- Responsive Image Example -->
+    <img 
+        src="https://wallpapers.com/images/high/lighthouse-silhouette-kofhpvhvejp0jzu2.webp" 
+        alt="Lighthouse Silhouette" 
+        title="Lighthouse Silhouette"
+        srcset="https://wallpapers.com/images/high/lighthouse-silhouette-kofhpvhvejp0jzu2.webp 500w, https://wallpapers.com/images/high/lighthouse-silhouette-kofhpvhvejp0jzu2.webp 1000w, https://wallpapers.com/images/high/lighthouse-silhouette-kofhpvhvejp0jzu2.webp 1500w"
+        sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 1500px"
+    />
+
+    <p>The <code>&lt;img&gt;</code> tag with <code>srcset</code> and <code>sizes</code> allows the image to be loaded in various sizes depending on the screen resolution and viewport size.</p>
+</body>
+</html>
+
+
+
+<!-- 
+Explanation:
+src:
+This is the fallback image, which is used if the srcset is not supported.
+The image is loaded from the provided URL: https://wallpapers.com/images/high/lighthouse-silhouette-kofhpvhvejp0jzu2.webp.
+
+alt:
+This provides a text description of the image for accessibility purposes. It is especially useful for screen readers or if the image fails to load.
+In this case, it's set to "Lighthouse Silhouette".
+
+title:
+This provides a tooltip when the user hovers over the image. It's set to "Lighthouse Silhouette" here.
+
+srcset:
+Specifies multiple image sources for different screen sizes. Here, the same image is used with different resolutions (500px, 1000px, and 1500px).
+This allows the browser to choose the most appropriate image based on the device's screen size and resolution.
+
+sizes:
+This specifies the expected display size of the image at different viewport widths. The browser uses this to decide which image to download based on the screen size.
+If the viewport is 600px wide or less, it loads the 500px wide image.
+For screen widths between 601px and 1200px, it loads the 1000px wide image.
+For screen widths larger than 1200px, it loads the 1500px wide image.
+-->

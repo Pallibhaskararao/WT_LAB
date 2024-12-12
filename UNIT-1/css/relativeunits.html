@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Units in CSS</title>
+    <style>
+        /* Using em for relative sizing based on the parent font size */
+        .container {
+            font-size: 16px; /* Base font size */
+            padding: 2em; /* Padding is 2 times the font size (2 * 16px = 32px) */
+        }
+
+        /* Using rem for relative sizing based on the root element's font size */
+        .box {
+            width: 20rem; /* 20 times the root font size (assuming root font size is 16px, it's 320px) */
+            height: 10rem; /* 10 times the root font size (160px) */
+            background-color: #4CAF50;
+        }
+
+        /* Using % for relative width based on parent element's size */
+        .percent-box {
+            width: 50%; /* 50% of the parent element's width */
+            height: 200px;
+            background-color: #FF5733;
+        }
+
+        /* Using vw for viewport width */
+        .viewport-width {
+            width: 50vw; /* 50% of the viewport's width */
+            height: 100px;
+            background-color: #FFD700;
+        }
+
+        /* Using vh for viewport height */
+        .viewport-height {
+            height: 50vh; /* 50% of the viewport's height */
+            width: 100px;
+            background-color: #00BFFF;
+        }
+
+        /* Using ch for character width (approximate width of "0" character) */
+        .character-unit {
+            width: 10ch; /* Width equivalent to 10 character widths */
+            height: 40px;
+            background-color: #32CD32;
+        }
+
+        /* Using vmin and vmax for scaling based on the smaller/larger dimension of viewport */
+        .viewport-min {
+            width: 10vmin; /* 10% of the smaller viewport dimension (either height or width) */
+            height: 10vmin;
+            background-color: #800080;
+        }
+
+        .viewport-max {
+            width: 10vmax; /* 10% of the larger viewport dimension (either height or width) */
+            height: 10vmax;
+            background-color: #8A2BE2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p>This is a container with padding set in <code>em</code>.</p>
+    </div>
+
+    <div class="box"></div>
+
+    <div class="percent-box"></div>
+
+    <div class="viewport-width"></div>
+
+    <div class="viewport-height"></div>
+
+    <div class="character-unit"></div>
+
+    <div class="viewport-min"></div>
+    <div class="viewport-max"></div>
+
+</body>
+</html>

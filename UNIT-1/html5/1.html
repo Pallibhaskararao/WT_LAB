@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Tags Example</title>
+</head>
+
+<body>
+
+    <!-- Header: Represents the header section of the document or a section -->
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <!-- Navigation: Contains links to navigate the website -->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section: Represents a section of content -->
+    <section id="home">
+        <h2>Home Section</h2>
+        <p>This is the home section of the page. It contains introductory content.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a variety of services tailored to your needs.</p>
+    </section>
+
+    <!-- Article: Represents a self-contained piece of content -->
+    <article>
+        <h2>HTML5 New Features</h2>
+        <p>HTML5 introduced many new semantic elements like <code>&lt;header&gt;, &lt;article&gt;, &lt;section&gt;, and more.</code></p>
+        <footer>
+            <!-- Footer: Represents the footer section of the document -->
+            <p>Written by John Doe on January 10, 2024</p>
+        </footer>
+    </article>
+
+    <!-- Aside: Represents content tangentially related to the main content -->
+    <aside>
+        <h3>Did You Know?</h3>
+        <p>HTML5 also introduced native support for audio and video content, making multimedia integration easier than ever.</p>
+    </aside>
+
+    <!-- Footer: Represents footer section for the entire page -->
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+    <!-- Form: Represents a form for collecting user input -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="/submit-form" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Table: Represents tabular data -->
+    <section>
+        <h2>HTML5 Support by Browsers</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Chrome</th>
+                    <th>Firefox</th>
+                    <th>Safari</th>
+                    <th>Edge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Audio Support</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Canvas</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Web Storage</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Video: Embeds a video -->
+    <section>
+        <h2>Sample HTML5 Video</h2>
+        <video width="320" height="240" controls>
+            <source src="sample.mp4" type="video/mp4">
+            <source src="sample.ogv" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Audio: Embeds an audio file -->
+    <section>
+        <h2>Sample HTML5 Audio</h2>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </section>
+
+    <!-- Canvas: Used for drawing graphics -->
+    <section>
+        <h2>HTML5 Canvas</h2>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+        <script>
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.fillStyle = "blue";
+            ctx.fillRect(20, 20, 150, 50);
+        </script>
+    </section>
+
+    <!-- Script: Embeds a JavaScript code for functionality -->
+    <script>
+        console.log("This is a simple JavaScript message logged to the console.");
+    </script>
+
+    <!-- Link: Represents a hyperlink -->
+    <a href="https://www.example.com" target="_blank">Visit Example</a>
+
+    <!-- Image: Embeds an image -->
+    <section>
+        <h2>HTML5 Image</h2>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </section>
+
+    <!-- Blockquote: Represents a block quotation -->
+    <section>
+        <h2>Quotation</h2>
+        <blockquote cite="https://www.example.com">
+            <p>This is a blockquote example. It represents content quoted from another source.</p>
+        </blockquote>
+    </section>
+
+    <!-- Progress: Represents a progress bar -->
+    <section>
+        <h2>HTML5 Progress Bar</h2>
+        <progress value="70" max="100">70%</progress>
+    </section>
+
+    <!-- Meter: Represents a scalar measurement within a known range -->
+    <section>
+        <h2>HTML5 Meter</h2>
+        <meter value="0.7">70%</meter>
+    </section>
+
+</body>
+
+</html>

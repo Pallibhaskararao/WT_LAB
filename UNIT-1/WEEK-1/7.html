@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Tech Application Form</title>
+</head>
+<body>
+    <h2>M.Tech Application Form</h2>
+    <form action="thankyou.html" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required> Male
+        <input type="radio" id="female" name="gender" value="Female" required> Female
+        <input type="radio" id="other" name="gender" value="Other" required> Other<br><br>
+
+        <label for="gateRank">PGCET Rank:</label>
+        <input type="number" id="pgRank" name="pgRank" required><br><br>
+
+        <label for="course">Course Interested In:</label>
+        <select id="course" name="course" required>
+            <option value="CSE">Computer Science Engineering</option>
+            <option value="ECE">Electronics and Communication Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<!-- 
+Explanation:
+Explanation:
+1.  <!DOCTYPE html>: Declares the document type as HTML5.
+2.  <html lang="en">: Specifies English language.
+3.  <head>: Contains metadata.
+4.  <meta charset="UTF-8">: Defines the character encoding.
+5.  <meta name="viewport" content="width=device-width, initial-scale=1.0">: Makes the page mobile-friendly.
+6.  <title>M.Tech Application Form</title>: Sets the page title.
+7.  <form action="thankyou.html" method="POST">: Creates a form with a POST method, submitting data to a "thankyou.html" page.
+8.  <label for="name">Name:</label>: Creates a label for the name field.
+9.  <input type="text" id="name" name="name" required>: Defines a text input for the name.
+10. The radio buttons (<input type="radio">) allow selection of gender.
+11. The <select> tag creates a dropdown list for selecting the course.
+12. <input type="submit" value="Submit">: Adds a submit button to send the form data.
+-->

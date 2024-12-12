@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete HTML Form with Input Types</title>
+</head>
+<body>
+
+    <h1>Registration and Feedback Form</h1>
+
+    <!-- 1. <form> Element: Defines the HTML form itself -->
+    <form action="/submit" method="post">
+
+        <!-- 2. <input> Element: Used to define input fields -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <br><br>
+
+        <!-- 3. <input type="password">: Text input where characters are masked -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br><br>
+
+        <!-- 4. <input type="email">: Accepts only valid email addresses -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+
+        <!-- 5. <input type="number">: Only accepts numeric input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" min="18" max="100" required>
+        <br><br>
+
+        <!-- 6. <input type="date">: Allows date selection -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br><br>
+
+        <!-- 7. <input type="radio">: Allows selecting one option from a group -->
+        <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+        </fieldset>
+        <br><br>
+
+        <!-- 8. <input type="checkbox">: Allows multiple options to be selected -->
+        <fieldset>
+            <legend>Hobbies:</legend>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="travelling" name="hobbies" value="travelling">
+            <label for="travelling">Travelling</label><br>
+            <input type="checkbox" id="coding" name="hobbies" value="coding">
+            <label for="coding">Coding</label><br>
+        </fieldset>
+        <br><br>
+
+        <!-- 9. <input type="file">: Allows file upload -->
+        <label for="profile_pic">Profile Picture:</label>
+        <input type="file" id="profile_pic" name="profile_pic">
+        <br><br>
+
+        <!-- 10. <button> Element: Defines a clickable button -->
+        <button type="button" onclick="alert('Button Clicked')">Click Me</button>
+        <br><br>
+
+        <!-- 11. <input type="submit">: Button to submit the form -->
+        <input type="submit" value="Submit">
+        <br><br>
+
+        <!-- 12. <input type="reset">: Button to reset form fields -->
+        <input type="reset" value="Reset">
+        <br><br>
+
+        <!-- 13. <input type="hidden">: Hidden field that stores data without displaying it -->
+        <input type="hidden" name="user_id" value="12345">
+        <br><br>
+
+        <!-- 14. <input type="tel">: Accepts telephone number input -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <br><br>
+
+        <!-- 15. <select> and <option> Elements: Defines a dropdown list -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+        </select>
+        <br><br>
+
+        <!-- 16. <datalist> Element: Provides predefined options for <input> -->
+        <label for="colors">Favorite Color:</label>
+        <input list="color-list" id="colors" name="colors" placeholder="Pick a color">
+        <datalist id="color-list">
+            <option value="Red">
+            <option value="Blue">
+            <option value="Green">
+            <option value="Yellow">
+            <option value="Black">
+        </datalist>
+        <br><br>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <style>
+        /* Universal Selector: Targets all elements */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Element Selector (Type Selector): Targets all <p> elements */
+        p {
+            font-size: 16px;
+        }
+
+        /* ID Selector: Targets the element with id="header" */
+        #header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Class Selector: Targets all elements with class="button" */
+        .button {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Attribute Selector: Targets <a> elements with href attribute starting with "https" */
+        a[href^="https"] {
+            color: green;
+        }
+
+        /* Descendant Selector: Targets <p> inside a <div> */
+        div p {
+            font-weight: bold;
+        }
+
+        /* Child Selector: Targets direct <li> elements inside <ul> */
+        ul > li {
+            list-style-type: square;
+            color: red;
+        }
+
+        /* Adjacent Sibling Selector: Targets <p> immediately following <h2> */
+        h2 + p {
+            margin-top: 0;
+            color: blue;
+        }
+
+        /* General Sibling Selector: Targets all <p> following <h2> */
+        h2 ~ p {
+            color: gray;
+        }
+
+        /* Pseudo-class Selector: Targets <a> when hovered */
+        a:hover {
+            color: orange;
+        }
+
+        /* Pseudo-element Selector: Targets the first letter of <p> */
+        p::first-letter {
+            font-size: 2em;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to CSS Selectors Demo</h1>
+    </div>
+
+    <p>This is a <strong>paragraph</strong> demonstrating various CSS selectors.</p>
+
+    <p>Hover over this <a href="https://www.example.com">link</a> to see the pseudo-class in action.</p>
+
+    <p class="button">This is a button styled with a class selector.</p>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <div>
+        <p>hello world</p>
+    </div>
+    <h2>This is a heading followed by a paragraph</h2>
+    <p>This paragraph follows the heading and is targeted by the adjacent sibling selector.</p>
+    <p>This paragraph is a general sibling of the heading and is styled differently.</p>
+
+    <p>Another paragraph inside a div element. The text here is bold because of the descendant selector.</p>
+
+    <p><a href="https://www.anotherexample.com">Another HTTPS link</a></p>
+
+    <p>First letter of this paragraph is styled with a pseudo-element selector.</p>
+</body>
+</html>

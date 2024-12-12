@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Class Timetable</h2>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+            <th>1:00 - 2:00</th>
+            <th>2:00 - 3:00</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Maths</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+            <td>Break</td>
+            <td>English</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!-- 
+Document Declaration:
+<!DOCTYPE html> declares that the document is written in HTML5, the latest version of HTML.
+
+HTML Tag and Language:
+The <html> tag starts the HTML document. The lang="en" attribute specifies that the language of the document is English, which helps with accessibility and SEO.
+
+Head Section:
+The <head> contains metadata and styles for the document. This section does not appear on the visible webpage.
+Character Encoding:
+<meta charset="UTF-8"> sets the character encoding to UTF-8, allowing the use of a wide variety of characters and symbols.
+
+Viewport Settings:
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> ensures the webpage adjusts correctly on all devices, especially mobile devices.
+
+Title:
+<title> specifies the title of the page, which appears in the browser tab (e.g., "Class Timetable").
+
+Style Section:
+The <style> tag contains CSS rules for styling the table and its components.
+
+Table and Border Styling:
+A CSS rule is defined to apply a black border around all <table>, <th>, and <td> elements. The border-collapse: collapse; ensures the borders between cells merge into a single border.
+
+Padding and Alignment:
+Another CSS rule applies padding (space inside each cell) and centers the text inside the table headers and data cells.
+
+End of Head:
+The closing </head> ends the head section, marking the transition to the body content.
+
+Body Start:
+The <body> tag begins the visible content section of the webpage.
+
+Heading for Timetable:
+An <h2> element adds a heading titled "Class Timetable," which is displayed above the table.
+
+Table Start:
+The <table> tag begins the timetable structure.
+
+First Row (Headers):
+A <tr> (table row) contains <th> elements for column headers: "Day" and time slots (e.g., "9:00 - 10:00"). Header cells are bold and centered by default.
+
+First Data Row (Monday):
+The first <tr> for data defines the Monday schedule, with one <td> for the day and additional <td> cells for each time slot (e.g., "Maths," "Physics").
+
+Additional Rows (Tuesday to Friday):
+Similar to Monday, rows are added for Tuesday, Wednesday, Thursday, and Friday. Each <tr> contains the day and scheduled subjects for each time slot.
+
+Break Period:
+A specific <td> for each day marks the "Break" period, visually separating it from classes.
+
+End of Table:
+The closing </table> tag signifies the end of the table structure.
+
+End of Body:
+The closing </body> tag marks the end of the visible content section.
+
+End of HTML:
+The closing </html> tag completes the document.
+-->

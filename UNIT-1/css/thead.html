@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between thead and th</title>
+    <style>
+        /* Styling for the table */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse; /* Combines borders for a clean look */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling for the thead section */
+        thead {
+            background-color: #4CAF50; /* Green background for the header group */
+            color: white; /* White text color */
+        }
+
+        /* Styling for table header cells (th) */
+        th {
+            background-color: #4CAF50;
+            border: 1px solid #ddd; /* Adds borders to header cells */
+            padding: 10px; /* Adds padding inside header cells */
+            text-align: center; /* Centers the text */
+            font-size: 18px; /* Increases font size for header cells */
+        }
+
+        /* Styling for table body rows */
+        tbody tr {
+            border: 1px solid #ddd; /* Adds borders between rows */
+        }
+
+        /* Alternating row background color */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Styling for table data cells (td) */
+        td {
+            padding: 10px; /* Adds padding inside data cells */
+            text-align: center; /* Centers the text */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Demonstrating &lt;thead&gt; and &lt;th&gt; </h1>
+
+    <!-- Table with thead and th -->
+    <table>
+        <!-- Using thead to group the header row -->
+        <thead>
+            <tr>
+                <th>Name</th> <!-- th defines the header for the Name column -->
+                <th>Age</th> <!-- th defines the header for the Age column -->
+                <th>City</th> <!-- th defines the header for the City column -->
+                <th>Score</th> <!-- th defines the header for the Score column -->
+            </tr>
+        </thead>
+
+        <!-- Table body -->
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>New York</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>28</td>
+                <td>Los Angeles</td>
+                <td>92</td>
+            </tr>
+            <tr>
+                <td>Mike</td>
+                <td>22</td>
+                <td>Chicago</td>
+                <td>78</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Example</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Student Marks Table</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td rowspan="3">1</td>
+            <td rowspan="3">David</td>
+            <td>Maths</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Computers</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td rowspan="3">2</td>
+            <td rowspan="3">Alex</td>
+            <td>Maths</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>Computers</td>
+            <td>90</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+<!-- 
+Explanation
+1.  <!DOCTYPE html>:
+o   Declares the document type as HTML5.
+2.  <html lang="en">:
+o   Specifies that the language of the document is English.
+3.  <head>:
+o   Contains metadata and styling for the document.
+4.  <meta charset="UTF-8">:
+o   Ensures the document uses UTF-8 encoding to support special characters.
+5.  <meta name="viewport" content="width=device-width, initial-scale=1.0">:
+o   Makes the document responsive for all screen sizes.
+6.  <title>HTML Table Example</title>:
+o   Sets the title of the document (displayed on the browser tab).
+7.  CSS Styling (<style> block):
+o   table { border-collapse: collapse; }:
+   Ensures the table has a single border around the cells.
+o   border: 1px solid black;:
+   Adds a black border around the table cells.
+o   padding: 10px;:
+   Adds space inside each cell.
+o   th { background-color: #f2f2f2; }:
+   Sets a light gray background for the header cells.
+8.  <body>:
+o   Contains the visible content.
+9.  <h2 style="text-align: center;">:
+o   Adds a centered heading above the table.
+10. <table>:
+o   Starts the table structure.
+11. <tr>:
+o   Represents a row in the table.
+12. <th>:
+o   Adds a header cell. Headers are bold and centered.
+13. <td rowspan="3">:
+o   Combines three rows into one for the ID and Name columns.
+14. Content Rows:
+o   Each subject (e.g., Maths, Physics, Computers) is in a separate row under the same ID and Name due to the use of rowspan.
+15. Repeat Rows for the Second Student:
+o   Similar structure is used for Alex, with the ID and Name spanning three rows.
+-->

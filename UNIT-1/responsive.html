@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images</title>
+    <style>
+        img {
+            width: 100%; /* Ensure the image takes full width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Images Example</h1>
+    <p>Resize the window to see the image adjust based on the screen size.</p>
+
+    <!-- The image will load a different file based on the viewport width -->
+    <img 
+        src="image-small.jpg" 
+        srcset="image-small.jpg 480w, image-medium.jpg 768w, image-large.jpg 1200w"
+        sizes="(max-width: 600px) 480px, (max-width: 1000px) 768px, 1200px" 
+        alt="Example of responsive image">
+
+</body>
+</html>

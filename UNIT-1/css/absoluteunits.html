@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Units in CSS</title>
+    <style>
+        /* Using px for precise measurement */
+        .box {
+            width: 200px; /* Fixed width of 200 pixels */
+            height: 150px; /* Fixed height of 150 pixels */
+            background-color: #4CAF50;
+        }
+
+        /* Using pt for print layouts (1pt = 1/72 of an inch) */
+        .text {
+            font-size: 12pt; /* Sets font size to 12 points */
+            color: #333;
+        }
+
+        /* Using cm for fixed physical dimensions */
+        .rectangle {
+            width: 10cm; /* Width set to 10 centimeters */
+            height: 5cm; /* Height set to 5 centimeters */
+            background-color: #FF5733;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    <p class="text">This is some text with 12pt font size.</p>
+    <div class="rectangle"></div>
+
+</body>
+</html>

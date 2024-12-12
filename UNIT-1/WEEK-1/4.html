@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tag Example</title>
+</head>
+<body>
+    <h2>Displaying an Image</h2>
+    <img 
+        src="https://cdn.gulte.com/wp-content/uploads/2021/09/ravi-teja.jpg" 
+        alt="Raviteja image from Gulte.com" 
+        width="500" 
+        height="300" 
+        title="Raviteja Image"
+        srcset="https://cdn.gulte.com/wp-content/uploads/2021/09/ravi-teja.jpg 500w, https://cdn.gulte.com/wp-content/uploads/2021/09/ravi-teja.jpg 1000w"
+        sizes="(max-width: 600px) 500px, 1000px"
+    />
+    <p>This image is an example of the <code>&lt;img&gt;</code> tag with various attributes for better accessibility and performance.</p>
+</body>
+</html>
+
+
+<!-- 
+Explanation:
+1.  <!DOCTYPE html>: Declares the document type.
+2.  <html lang="en">: Specifies the document language.
+3.  <head>: Contains meta information about the document.
+4.  <meta charset="UTF-8">: Sets character encoding.
+5.  <meta name="viewport" content="width=device-width,initial-scale=1.0">: Ensures mobile responsiveness.
+6.  <title>Image Tag Example</title>: Sets the browser tab's title.
+7.  <body>: Defines the content of the page.
+8.  <h2>: A heading describing the image.
+9.  <img src="https://www.example.com/sample-image.jpg" alt="Sample Image" width="500" height="300" title="Sample Image" />: This is the <img> tag to display an image.
+o   src: Specifies the image source URL.
+o   alt: Provides alternative text in case the image cannot be displayed.
+o   width and height: Set the image's dimensions.
+o   title: Provides additional information about the image when hovering the mouse over it.
+10. <p>: A paragraph that shows the code used to display the image.
+-->

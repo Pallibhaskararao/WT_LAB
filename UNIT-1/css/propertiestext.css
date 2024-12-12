@@ -1,0 +1,71 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Sets a default font for the entire page */
+    background-color: #f9f9f9; /* Light background for better readability */
+    margin: 20px; /* Adds space around the page */
+    line-height: 1.5; /* Ensures consistent line spacing */
+}
+
+/* Title (h1) Styling */
+h1 {
+    color: #4CAF50; /* Sets text color to green */
+    font-size: 36px; /* Sets a larger font size for emphasis */
+    text-align: center; /* Centers the title */
+    text-transform: uppercase; /* Converts text to uppercase */
+    margin-bottom: 20px; /* Adds space below the title */
+}
+
+/* Basic text properties */
+.basic {
+    color: #555; /* Gray text color */
+    font-size: 18px; /* Medium font size for readability */
+    font-family: 'Georgia', serif; /* Sets a serif font */
+    line-height: 1.8; /* Increases space between lines */
+}
+
+/* Text alignment */
+.alignment {
+    text-align: justify; /* Aligns text to both left and right edges */
+    font-size: 16px; /* Standard font size */
+    color: #333; /* Darker gray text color */
+}
+
+/* Letter-spacing and word-spacing */
+.spacing {
+    letter-spacing: 1px; /* Adds space between letters */
+    word-spacing: 10px; /* Adds space between words */
+    font-size: 16px; /* Standard font size */
+    text-align: left; /* Left-aligns the text */
+    color: #444; /* Slightly lighter gray */
+}
+
+/* Text-transform and text-decoration */
+.transform-decorate {
+    text-transform: capitalize; /* Capitalizes the first letter of each word */
+    text-decoration: underline; /* Underlines the text */
+    font-size: 18px; /* Medium font size */
+    font-weight: bold; /* Makes the text bold */
+    color: #007BFF; /* Blue text color */
+}
+
+/* White-space property */
+.whitespace {
+    white-space: nowrap; /* Prevents wrapping or collapsing of spaces */
+    font-size: 16px; /* Standard font size */
+    color: #555; /* Gray text */
+}
+
+/* Text direction (LTR) */
+.direction {
+    direction: ltr; /* Left-to-right text direction */
+    font-size: 16px; /* Standard font size */
+    color: #222; /* Dark text color */
+}
+
+/* Text direction (RTL) */
+.direction-rtl {
+    direction: rtl; /* Right-to-left text direction */
+    font-size: 16px; /* Standard font size */
+    color: #222; /* Dark text color */
+    text-align: right; /* Aligns the text to the right */
+}
