@@ -1,0 +1,38 @@
+<!-- Design an M.Tech application form to collect details like Name, Gender, GATE Rank, etc., with a submit button leading to
+a Thank You page. -->
+<html>
+
+<head>
+    <title>Gate application</title>
+</head>
+
+<body>
+    <h1>Gate application form </h1>
+    <form action="submit.html" method="" class="gate">
+        <label> NAME : </label>
+        <input type="text" for="name" class="gate">
+        <br><br>
+
+        <label>Gender : </label>
+        <input type="radio" name="gender" class="gate">
+        <label>MALE</label>
+        <input type="radio" name="gender" class="gate">
+        <label>FEMALE</label>
+        <br><br>
+
+        <label>Gate rank : </label>
+        <input type="number" class="gate" value="rank">
+        <br><br>
+
+        <label>Department : </label>
+        <select class="gate">
+            <option value="CSE">ECE</option>
+            <option value="ECE">CSE</option>
+            <option value="MEC">OTHER</option>
+        </select>
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
