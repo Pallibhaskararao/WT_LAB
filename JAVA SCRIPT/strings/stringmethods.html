@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+        }
+        .method {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .method h3 {
+            margin: 0 0 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript String Methods Demonstration</h1>
+    <div id="methods"></div>
+
+    <script>
+        // Sample string
+        let text = "Hello, World!";
+        const methods = [];
+
+        // 1. charAt(position)
+        let charAtResult = text.charAt(7);
+        methods.push({
+            name: 'charAt()',
+            description: 'Returns the character at the specified position.',
+            code: "text.charAt(7);",
+            result: charAtResult
+        });
+
+        // 2. concat([string,,])
+        let concatResult = text.concat(" How are you?");
+        methods.push({
+            name: 'concat()',
+            description: 'Concatenates two or more strings.',
+            code: "text.concat(' How are you?');",
+            result: concatResult
+        });
+
+        // 3. indexOf(searchString, position)
+        let indexOfResult = text.indexOf("World");
+        methods.push({
+            name: 'indexOf()',
+            description: 'Finds the first occurrence of a substring.',
+            code: "text.indexOf('World');",
+            result: indexOfResult
+        });
+
+        // 4. lastIndexOf(searchString, position)
+        let lastIndexOfResult = text.lastIndexOf("o");
+        methods.push({
+            name: 'lastIndexOf()',
+            description: 'Finds the last occurrence of a substring.',
+            code: "text.lastIndexOf('o');",
+            result: lastIndexOfResult
+        });
+
+        // 5. replace(searchValue, replaceValue)
+        let replaceResult = text.replace("World", "JavaScript");
+        methods.push({
+            name: 'replace()',
+            description: 'Replaces part of the string with another string.',
+            code: "text.replace('World', 'JavaScript');",
+            result: replaceResult
+        });
+
+        // 6. substr(start, length)
+        let substrResult = text.substr(0, 5);
+        methods.push({
+            name: 'substr()',
+            description: 'Extracts a substring starting from `start` for `length` characters.',
+            code: "text.substr(0, 5);",
+            result: substrResult
+        });
+
+        // 7. substring(start, end)
+        let substringResult = text.substring(0, 5);
+        methods.push({
+            name: 'substring()',
+            description: 'Extracts a substring between `start` and `end` indexes.',
+            code: "text.substring(0, 5);",
+            result: substringResult
+        });
+
+        // 8. toLowerCase()
+        let toLowerCaseResult = text.toLowerCase();
+        methods.push({
+            name: 'toLowerCase()',
+            description: 'Converts the string to lowercase.',
+            code: "text.toLowerCase();",
+            result: toLowerCaseResult
+        });
+
+        // 9. toUpperCase()
+        let toUpperCaseResult = text.toUpperCase();
+        methods.push({
+            name: 'toUpperCase()',
+            description: 'Converts the string to uppercase.',
+            code: "text.toUpperCase();",
+            result: toUpperCaseResult
+        });
+
+        // 10. slice()
+        let sliceResult = text.slice(0, 5);
+        methods.push({
+            name: 'slice()',
+            description: 'Extracts a part of a string and returns a new string.',
+            code: "text.slice(0, 5);",
+            result: sliceResult
+        });
+
+        // 11. charCodeAt(index)
+        let charCodeAtResult = text.charCodeAt(7);
+        methods.push({
+            name: 'charCodeAt()',
+            description: 'Returns the Unicode value of the character at a specified position.',
+            code: "text.charCodeAt(7);",
+            result: charCodeAtResult
+        });
+
+        // 12. fromCharCode(num1, num2, ...)
+        let fromCharCodeResult = String.fromCharCode(72, 101, 108, 108, 111);
+        methods.push({
+            name: 'fromCharCode()',
+            description: 'Converts Unicode values to a string.',
+            code: "String.fromCharCode(72, 101, 108, 108, 111);",
+            result: fromCharCodeResult
+        });
+
+        // 13. split(separator)
+        let splitResult = text.split(" ");
+        methods.push({
+            name: 'split()',
+            description: 'Splits a string into an array of substrings.',
+            code: "text.split('');",
+            result: splitResult
+        });
+
+        // Dynamically render the methods and results
+        const methodsDiv = document.getElementById("methods");
+        methods.forEach(method => {
+            const methodDiv = document.createElement("div");
+            methodDiv.className = "method";
+            methodDiv.innerHTML = `
+                <h3>${method.name}</h3>
+                <p>${method.description}</p>
+                <pre>${method.code}</pre>
+                <p><span class="result">Result:</span> ${JSON.stringify(method.result)}</p>
+            `;
+            methodsDiv.appendChild(methodDiv);
+        });
+    </script>
+</body>
+</html>

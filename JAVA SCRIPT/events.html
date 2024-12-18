@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events and Handlers</title>
+    <style>
+        /* Basic styling for demonstration */
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            background-color: lightgray; 
+            text-align: center; 
+            line-height: 150px; 
+            margin: 10px; 
+            border: 1px solid black; 
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Events and Their Handlers</h1>
+
+    <!-- ==================== Mouse Events ==================== -->
+    <h2>1. Mouse Events</h2>
+
+    <!-- Example: Click Event -->
+    <button onclick="handleClick()">Click Me</button>
+    <script>
+        function handleClick() {
+            alert("Button clicked!");
+        }
+    </script>
+
+    <!-- Example: Mouseover and Mouseout -->
+    <div class="box" 
+         onmouseover="this.style.backgroundColor='lightblue'" 
+         onmouseout="this.style.backgroundColor='lightgray'">
+        Hover over me
+    </div>
+
+    <!-- Example: Mousedown and Mouseup -->
+    <div class="box" 
+         onmousedown="this.style.border='2px solid red'" 
+         onmouseup="this.style.border='2px solid black'">
+        Hold the mouse
+    </div>
+
+    <!-- Example: Mousemove -->
+    <div class="box" onmousemove="handleMouseMove(event)">
+        Move mouse here
+    </div>
+    <p id="mouse-position"></p>
+    <script>
+        function handleMouseMove(event) {
+            document.getElementById("mouse-position").innerText = 
+                `Mouse Position: X=${event.clientX}, Y=${event.clientY}`;
+        }
+    </script>
+
+    <!-- ==================== Keyboard Events ==================== -->
+    <h2>2. Keyboard Events</h2>
+
+    <!-- Keydown and Keyup Example -->
+    <input type="text" 
+           onkeydown="keyDownHandler()" 
+           onkeyup="keyUpHandler()" 
+           placeholder="Press a key">
+    <p id="key-status"></p>
+
+    <script>
+        function keyDownHandler() {
+            document.getElementById("key-status").innerText = "Key Pressed Down!";
+        }
+        function keyUpHandler() {
+            document.getElementById("key-status").innerText = "Key Released!";
+        }
+    </script>
+
+    <!-- ==================== Form Events ==================== -->
+    <h2>3. Form Events</h2>
+
+    <!-- Focus and Blur Example -->
+    <input type="text" 
+           onfocus="this.style.background='yellow'" 
+           onblur="this.style.background='white'" 
+           placeholder="Focus on me!">
+
+    <!-- Change Event Example -->
+    <select onchange="alert('You selected: ' + this.value)">
+        <option value="">Choose an option</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+    </select>
+
+    <!-- Submit Event Example -->
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" name="username" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent page reload
+            alert("Form submitted successfully!");
+        }
+    </script>
+
+    <!-- ==================== Window/Document Events ==================== -->
+    <h2>4. Window/Document Events</h2>
+
+    <!-- Load Event -->
+    <script>
+        window.onload = function() {
+            console.log("Page loaded successfully!");
+            alert("Welcome! The page has loaded.");
+        };
+    </script>
+
+    <!-- Resize Event -->
+    <p id="resize-info">Resize the browser window!</p>
+    <script>
+        window.onresize = function() {
+            document.getElementById("resize-info").innerText = 
+                "Window size: " + window.innerWidth + "x" + window.innerHeight;
+        };
+    </script>
+
+    <!-- Unload Event -->
+    <script>
+        window.onunload = function() {
+            console.log("Page is being unloaded!");
+        };
+    </script>
+
+</body>
+</html>

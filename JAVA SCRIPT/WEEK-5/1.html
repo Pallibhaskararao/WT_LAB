@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up Boxes Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Pop-Up Boxes Demo</h1>
+    <p>This page demonstrates how to use JavaScript's pop-up boxes: alert, prompt, and confirm.</p>
+
+    <!-- Buttons to trigger each pop-up -->
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+
+    <script>
+        // ==========================
+        // Alert Box
+        // ==========================
+        function showAlert() {
+            // The alert box displays a message and has an OK button.
+            alert("This is an alert box! Click OK to continue.");
+        }
+
+        // ==========================
+        // Prompt Box
+        // ==========================
+        function showPrompt() {
+            // The prompt box asks the user for input and provides a text field.
+            let userInput = prompt("Please enter your name:", "John Doe");
+
+            // Check if the user provided input or cancelled the prompt
+            if (userInput !== null && userInput !== "") {
+                alert("Hello, " + userInput + "! Welcome to the website.");
+            } else {
+                alert("You did not enter anything.");
+            }
+        }
+
+        // ==========================
+        // Confirm Box
+        // ==========================
+        function showConfirm() {
+            // The confirm box asks the user to confirm or cancel an action.
+            let userChoice = confirm("Do you want to proceed with the action?");
+
+            // Check the user's choice (OK or Cancel)
+            if (userChoice) {
+                alert("You chose to proceed!");
+            } else {
+                alert("You chose to cancel.");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types</title>
+    <style>
+        /* Basic styling for the body and pre tags */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Primitive Data Types</h1>
+    <div id="output">
+        <h2>Output</h2>
+        <pre></pre>
+    </div>
+
+    <script>
+        // Selecting the output element where we will log the results
+        const outputElement = document.querySelector('#output pre');
+
+        // Function to log messages to the output
+        function log(message) {
+            outputElement.textContent += message + '\n'; // Append each message with a newline
+        }
+
+        // Logging a header for the output
+        log("--- JavaScript Primitive Data Types Demonstration ---\n");
+
+        // 1. String: Represents a sequence of characters enclosed in single (' ') or double (" ") quotes.
+        let myString = "Hello, World!"; // Example of a string using double quotes
+        let mySingleQuoteString = 'Hello again!'; // Example of a string using single quotes
+        let concatenatedString = myString + ' ' + mySingleQuoteString; // Concatenating strings
+        log("1. String Examples:");
+        log("   Example 1: " + myString);
+        log("   Example 2: " + mySingleQuoteString);
+        log("   Concatenated: " + concatenatedString);
+
+        // 2. Number: Represents numeric values, including integers and floating-point numbers.
+        let myInteger = 42; // Example of an integer
+        let myFloat = 3.14; // Example of a floating-point number
+        let sum = myInteger + myFloat; // Adding integer and float
+        log("2. Number Examples:");
+        log("   Integer: " + myInteger);
+        log("   Float: " + myFloat);
+        log("   Sum of Integer and Float: " + sum);
+
+        // 3. Boolean: Represents a logical entity and can have two values: true or false.
+        let isTrue = true; // Example of a boolean value
+        let isFalse = false; // Example of a false boolean value
+        log("3. Boolean Examples:");
+        log("   True: " + isTrue);
+        log("   False: " + isFalse);
+
+        // 4. Undefined: Represents a variable that has been declared but not assigned a value.
+        let myUndefined; // This variable is declared but not assigned a value
+        log("4. Undefined Example:");
+        log("   Undefined value: " + myUndefined);
+
+        // 5. Null: Represents the intentional absence of any object value.
+        let myNull = null; // Explicitly assigning null to a variable
+        log("5. Null Example:");
+        log("   Null value: " + myNull);
+
+    </script>
+</body>
+</html>

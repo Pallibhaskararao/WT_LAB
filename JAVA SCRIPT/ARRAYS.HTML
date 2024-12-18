@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Array Methods and Properties</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    .example {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .output {
+      background: #e9e9e9;
+      padding: 10px;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>JavaScript Array Methods and Properties</h1>
+
+<div class="example">
+  <h2>[ ] and new Array()</h2>
+  <button onclick="createArray()">Create Array</button>
+  <div class="output" id="output1"></div>
+</div>
+
+<div class="example">
+  <h2>at()</h2>
+  <button onclick="arrayAt()">Get Element at Index 2</button>
+  <div class="output" id="output2"></div>
+</div>
+
+<div class="example">
+  <h2>concat()</h2>
+  <button onclick="concatArrays()">Concatenate Arrays</button>
+  <div class="output" id="output3"></div>
+</div>
+
+<div class="example">
+  <h2>copyWithin()</h2>
+  <button onclick="copyWithinExample()">Copy Within Array</button>
+  <div class="output" id="output4"></div>
+</div>
+
+<div class="example">
+  <h2>filter()</h2>
+  <button onclick="filterArray()">Filter Array (Even Numbers)</button>
+  <div class="output" id="output5"></div>
+</div>
+
+<div class="example">
+  <h2>map()</h2>
+  <button onclick="mapArray()">Map Array (Double Values)</button>
+  <div class="output" id="output6"></div>
+</div>
+
+<div class="example">
+  <h2>reduce()</h2>
+  <button onclick="reduceArray()">Reduce Array (Sum of Elements)</button>
+  <div class="output" id="output7"></div>
+</div>
+
+<script>
+  // [ ] and new Array()
+  function createArray() {
+    const array1 = [1, 2, 3];
+    const array2 = new Array(4, 5, 6);
+    document.getElementById('output1').innerText = `Array1: ${array1}, Array2: ${array2}`;
+  }
+
+  // at()
+  function arrayAt() {
+    const array = [10, 20, 30, 40];
+    const value = array.at(2);
+    document.getElementById('output2').innerText = `Value at index 2: ${value}`;
+  }
+
+  // concat()
+  function concatArrays() {
+    const array1 = [1, 2];
+    const array2 = [3, 4];
+    const result = array1.concat(array2);
+    document.getElementById('output3').innerText = `Concatenated Array: ${result}`;
+  }
+
+  // copyWithin()
+  function copyWithinExample() {
+    const array = [10, 20, 30, 40, 50];
+    array.copyWithin(1, 3);
+    document.getElementById('output4').innerText = `Modified Array: ${array}`;
+  }
+
+  // filter()
+  function filterArray() {
+    const array = [1, 2, 3, 4, 5];
+    const result = array.filter(num => num % 2 === 0);
+    document.getElementById('output5').innerText = `Filtered Array (Even Numbers): ${result}`;
+  }
+
+  // map()
+  function mapArray() {
+    const array = [1, 2, 3];
+    const result = array.map(num => num * 2);
+    document.getElementById('output6').innerText = `Mapped Array (Doubled): ${result}`;
+  }
+
+  // reduce()
+  function reduceArray() {
+    const array = [1, 2, 3, 4];
+    const result = array.reduce((sum, num) => sum + num, 0);
+    document.getElementById('output7').innerText = `Reduced Value (Sum): ${result}`;
+  }
+</script>
+
+</body>
+</html>

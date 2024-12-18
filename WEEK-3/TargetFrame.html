@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flag Using Frames</title>
+    <title>Target Frames Example</title>
 </head>
-<frameset rows="33%, 34%, 33%">
-    <frame src="orange.html" name="orangeFrame">
-    <frame src="white.html" name="whiteFrame">
-    <frame src="green.html" name="greenFrame">
+<frameset cols="30%, 70%">
+    <!-- Left Frame for Navigation -->
+    <frame src="menu.html" name="menuFrame">
+    <!-- Right Frame for Content -->
+    <frame src="content.html" name="contentFrame">
 </frameset>
 <noframes>
     <body>

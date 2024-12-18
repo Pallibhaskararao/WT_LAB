@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Prime Numbers</title>
+</head>
+<body>
+    <h1>Prime Numbers Up to a Given Number</h1>
+
+    <!-- Input field and button -->
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="1">
+    <button onclick="displayPrimes()">Submit</button>
+
+    <!-- Placeholder for displaying the result -->
+    <h3>Prime Numbers:</h3>
+    <p id="result"></p>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Function to check if a number is prime
+        function isPrime(num) {
+            if (num < 2) return false; // Numbers less than 2 are not prime
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false; // Not prime if divisible by any number other than 1 and itself
+            }
+            return true;
+        }
+
+        // Function to display prime numbers up to the given number
+        function displayPrimes() {
+            // Get the input value
+            const inputNumber = parseInt(document.getElementById("numberInput").value);
+
+            // Validate input
+            if (isNaN(inputNumber) || inputNumber < 1) {
+                document.getElementById("result").textContent = "Please enter a valid positive number.";
+                return;
+            }
+
+            // Generate prime numbers up to the input value
+            let primes = [];
+            for (let i = 2; i <= inputNumber; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+
+            // Display the result
+            document.getElementById("result").textContent = primes.join(", ");
+        }
+    </script>
+</body>
+</html>

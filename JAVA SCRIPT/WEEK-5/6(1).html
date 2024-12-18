@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search with Dynamic Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        p {
+            font-size: 18px;
+        }
+        input, button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Linear Search Program</h1>
+    <p>Enter the elements of the array (comma-separated), then search for a number in that array.</p>
+
+    <!-- Input for entering array elements -->
+    <input type="text" id="arrayElements" placeholder="Enter elements (comma separated)" required>
+    <button onclick="storeArray()">Store Array</button>
+
+    <!-- Input for entering number to search -->
+    <input type="number" id="searchNumber" placeholder="Enter number to search" required>
+    <button onclick="linearSearch()">Search</button>
+
+    <!-- Display the result here -->
+    <div id="result"></div>
+
+    <script>
+        // Variable to store the array
+        let numbers = [];
+
+        // Function to store array elements entered by the user
+        function storeArray() {
+            // Get the input string, split by commas, and convert each value to a number
+            let input = document.getElementById("arrayElements").value;
+            if (input === "") {
+                alert("Please enter some elements.");
+                return;
+            }
+            
+            numbers = input.split(',').map(item => parseInt(item.trim()));
+
+            // Display the stored array for confirmation
+            document.getElementById("result").innerHTML = `<p>Array stored: [${numbers.join(', ')}]</p>`;
+        }
+
+        // Function to perform linear search
+        function linearSearch() {
+            // Get the number to search from the input field
+            let searchNumber = document.getElementById("searchNumber").value;
+
+            // Ensure the input is valid
+            if (searchNumber === "" || isNaN(searchNumber)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Perform linear search in the array
+            let found = false;
+            let index = -1;
+
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] == searchNumber) {
+                    found = true;
+                    index = i;
+                    break;
+                }
+            }
+
+            // Display the result of the search
+            if (found) {
+                document.getElementById("result").innerHTML = `<p>Number ${searchNumber} found at index ${index}.</p>`;
+            } else {
+                document.getElementById("result").innerHTML = `<p>Number ${searchNumber} not found in the array.</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Object (Using new Keyword) Examples</title>
+</head>
+<body>
+
+    <h1>JavaScript String Object (Using new Keyword) Demonstration</h1>
+
+    <p>This example demonstrates creating strings using the <code>new String()</code> constructor in JavaScript.</p>
+
+    <script>
+        // Example 1: Create string using the String constructor (new keyword)
+        var greetingObject = new String("Hello, World!");  // String object
+
+        document.write("<h3>1. String using new String() constructor:</h3>");
+        document.write("Greeting Object: " + greetingObject + "<br/>");
+
+        document.write("<br/>");
+
+        // Example 2: Create string using the String constructor with single quotes
+        var messageObject = new String('Welcome to JavaScript!');  // String object
+
+        document.write("<h3>2. String Object using new String() with Single Quotes:</h3>");
+        document.write("Message Object: " + messageObject + "<br/>");
+
+        document.write("<br/>");
+
+        // Example 3: String object with template literal inside
+        var name = "Alice";
+        var welcomeMessageObject = new String(`Hello, ${name}!`);  // String object with template literal
+
+        document.write("<h3>3. String Object using new String() with Template Literal:</h3>");
+        document.write("Welcome Message Object: " + welcomeMessageObject + "<br/>");
+
+    </script>
+
+</body>
+</html>

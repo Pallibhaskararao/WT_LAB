@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript for/in Loop Example</title>
+</head>
+<body>
+
+    <h1>JavaScript for/in Loop Example</h1>
+    <p id="result"></p>
+
+    <script>
+        // Step 1: Create an object with some properties
+        const person = {
+            name: "Alice",  // property 1
+            age: 25,        // property 2
+            profession: "Engineer"  // property 3
+        };
+
+        // Step 2: Use for/in loop to iterate over the object properties
+        let output = "";  // Initialize an empty string to accumulate the result
+
+        // The for/in loop will iterate over the keys (property names) of the object
+        for (let key in person) {
+            // Step 3: Check if the property is the object's own property (not from prototype chain)
+            if (person.hasOwnProperty(key)) {
+                // Append the key and value to the output string
+                output += key + ": " + person[key] + "<br>";
+            }
+        }
+
+        // Step 4: Display the result in the <p> element
+        document.getElementById("result").innerHTML = output;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        p {
+            font-size: 18px;
+        }
+        input, button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Reverse Number Program</h1>
+    <p>Enter a number to display it in reverse order.</p>
+
+    <!-- Input for entering the number -->
+    <input type="number" id="inputNumber" placeholder="Enter a number" required>
+    <button onclick="reverseNumber()">Reverse Number</button>
+
+    <!-- Display the result here -->
+    <div id="result"></div>
+
+    <script>
+        // Function to reverse the digits of a number
+        function reverseNumber() {
+            // Get the value from the input field
+            let number = document.getElementById("inputNumber").value;
+
+            // Ensure that the input is a valid number
+            if (number === "" || isNaN(number)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Convert the number to a string, reverse the string, and then join it back to form the reversed number
+            let reversed = number.toString().split('').reverse().join('');
+
+            // Display the reversed number
+            document.getElementById("result").innerHTML = `<p>Reversed Number: ${reversed}</p>`;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal JavaScript onsubmit</title>
+</head>
+<body>
+    <h2>Internal JavaScript Form Submission</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            if (email == "") {
+                alert("Email must be filled out!");
+                return false;  // Prevent form submission
+            }
+            alert("Form submitted successfully!");
+            return true;  // Allow form submission
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document Object Example</title>
+</head>
+<body>
+    <h1 id="heading">Hello, Document Object!</h1>
+    <p>This is a demonstration of the document object.</p>
+    <button onclick="modifyContent()">Click Me</button>
+
+    <script>
+        // Accessing and modifying content using document object
+        function modifyContent() {
+            // Accessing an element
+            var heading = document.getElementById("heading");
+
+            // Modifying content
+            heading.innerHTML = "The Document Object is Powerful!";
+            
+            // Logging the document properties
+            console.log("Title:", document.title);
+            console.log("URL:", document.URL);
+            console.log("Last Modified:", document.lastModified);
+        }
+    </script>
+</body>
+</html>

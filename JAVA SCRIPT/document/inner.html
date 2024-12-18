@@ -1,0 +1,11 @@
+<div id="container">
+    <p>This is some content.</p>
+</div>
+<button onclick="changeContent()">Change Content</button>
+
+<script>
+    function changeContent() {
+        var container = document.getElementById("container");
+        container.innerHTML = "<h3>New Content Added!</h3><p>This is updated content.</p>";
+    }
+</script>

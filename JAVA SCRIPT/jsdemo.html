@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Variables in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #2a3d66;
+        }
+        .code {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Consolas, monaco, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #ffeeba;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Understanding Variables in JavaScript</h1>
+    <p>In JavaScript, a variable is a container that holds a value. You can assign new values to a variable over time. Variables are declared using three main keywords: <strong>var</strong>, <strong>let</strong>, and <strong>const</strong>.</p>
+
+    <h2>1. Declaring Variables</h2>
+    <p>Here’s a brief overview of how you can declare variables:</p>
+
+    <h3>a. <code>var</code></h3>
+    <p>The <code>var</code> keyword is the oldest way to declare variables. Variables declared with <code>var</code> are <strong>function-scoped</strong>, meaning they are only accessible within the function in which they are declared.</p>
+    <div class="code">
+        <code>
+// Declaring a variable with var
+var age = 25; // Function-scoped variable
+
+// Displaying the value of age
+console.log(age); // Output: 25
+        </code>
+    </div>
+
+    <h3>b. <code>let</code></h3>
+    <p>The <code>let</code> keyword was introduced in ES6 (ECMAScript 2015). It is <strong>block-scoped</strong>, meaning the variable is only accessible within the block (enclosed by curly braces) in which it is defined. It also allows reassignment of values.</p>
+    <div class="code">
+        <code>
+// Declaring a variable with let
+let name = "John"; // Block-scoped variable
+
+// Reassigning the value of the name variable
+name = "Jane"; // Reassigning the value to "Jane"
+
+// Displaying the value of name
+console.log(name); // Output: Jane
+        </code>
+    </div>
+
+    <h3>c. <code>const</code></h3>
+    <p>The <code>const</code> keyword also declares block-scoped variables, but unlike <code>let</code>, the value cannot be reassigned after initialization. It’s used for constants or values that should not change.</p>
+    <div class="code">
+        <code>
+// Declaring a constant with const
+const pi = 3.14; // Constant value, cannot be reassigned
+
+// Uncommenting the following line would cause an error because pi cannot be reassigned
+// pi = 3.14159; // Error: Assignment to constant variable
+
+// Displaying the value of pi
+console.log(pi); // Output: 3.14
+        </code>
+    </div>
+
+    <h2>2. Key Differences Between <code>var</code>, <code>let</code>, and <code>const</code></h2>
+    <p>Here's a quick comparison to understand the key differences between the three types of variable declarations:</p>
+    <ul>
+        <li><strong>var</strong> is function-scoped and allows reassignment.</li>
+        <li><strong>let</strong> is block-scoped and allows reassignment.</li>
+        <li><strong>const</strong> is block-scoped but does not allow reassignment after initialization.</li>
+    </ul>
+
+    <h2>3. Best Practices</h2>
+    <p>While <code>var</code> is still valid in JavaScript, it is recommended to use <code>let</code> and <code>const</code> for better control and predictability of variables. In most cases, prefer <code>const</code> unless you specifically need to reassign the variable, in which case use <code>let</code>.</p>
+
+    <div class="note">
+        <strong>Note:</strong> It's always a good practice to use the <code>const</code> keyword for variables whose value should not change.
+    </div>
+
+    <h2>4. Practice Example</h2>
+    <p>Let's write a simple script where we use all three types of variables:</p>
+    <div class="code">
+        <code>
+// Defining a function to show usage of var, let, and const
+function showDetails() {
+    var city = "Paris"; // var is function-scoped, declared inside the function
+    let country = "France"; // let is block-scoped, declared inside the block
+    const continent = "Europe"; // const is block-scoped, and value cannot be reassigned
+
+    // Displaying the values of city, country, and continent
+    console.log(city + ", " + country + ", " + continent); // Output: Paris, France, Europe
+    
+    // Reassigning the value of country
+    country = "Germany"; // Reassigning the value of country
+
+    // Displaying the updated value of country
+    console.log(country); // Output: Germany
+}
+
+// Calling the showDetails function
+showDetails();
+        </code>
+    </div>
+
+    <footer>
+        <p>Learn more about JavaScript variables and other concepts at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types">MDN Web Docs</a>.</p>
+    </footer>
+
+</body>
+</html>

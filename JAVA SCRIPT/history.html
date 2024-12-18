@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript History Object Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #ccc;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript History Object</h1>
+    <p>The <code>history</code> object in JavaScript is part of the <code>Window</code> interface and allows manipulation of the browser's session history.</p>
+
+    <h2>Methods of the History Object</h2>
+
+    <h3>1. <code>history.back()</code></h3>
+    <p><strong>Description:</strong> Navigates to the previous page in the session history (equivalent to clicking the back button in the browser).</p>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function goBack() {
+                history.back();
+            }
+        </script>
+        <button onclick="goBack()">Go Back</button>
+        <iframe src="about:blank" title="history.back() example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>2. <code>history.forward()</code></h3>
+    <p><strong>Description:</strong> Navigates to the next page in the session history (equivalent to clicking the forward button in the browser).</p>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function goForward() {
+                history.forward();
+            }
+        </script>
+        <button onclick="goForward()">Go Forward</button>
+        <iframe src="about:blank" title="history.forward() example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>3. <code>history.go()</code></h3>
+    <p><strong>Description:</strong> Navigates to a specific page in the session history, relative to the current page.</p>
+    <ul>
+        <li>Pass a positive number to move forward.</li>
+        <li>Pass a negative number to move backward.</li>
+        <li>Pass <code>0</code> to reload the current page.</li>
+    </ul>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function goToPage(step) {
+                history.go(step);
+            }
+        </script>
+        <button onclick="goToPage(-1)">Go Back One Page</button>
+        <button onclick="goToPage(1)">Go Forward One Page</button>
+        <iframe src="about:blank" title="history.go() example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>4. <code>history.pushState()</code></h3>
+    <p><strong>Description:</strong> Adds a new entry to the session history stack without reloading the page.</p>
+    <ul>
+        <li><code>state</code>: A state object associated with the new history entry.</li>
+        <li><code>title</code>: (optional) Title of the new history entry (often ignored).</li>
+        <li><code>url</code>: (optional) The new URL to associate with the state.</li>
+    </ul>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function pushStateExample() {
+                history.pushState({page: 'example'}, 'Example Page', 'example.html');
+                alert('New history state added!');
+            }
+        </script>
+        <button onclick="pushStateExample()">Push State</button>
+        <iframe src="about:blank" title="history.pushState() example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>5. <code>history.replaceState()</code></h3>
+    <p><strong>Description:</strong> Updates the current entry in the session history stack without creating a new entry.</p>
+    <ul>
+        <li><code>state</code>: A state object associated with the history entry.</li>
+        <li><code>title</code>: (optional) Title of the history entry (often ignored).</li>
+        <li><code>url</code>: (optional) The new URL to associate with the state.</li>
+    </ul>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function replaceStateExample() {
+                history.replaceState({page: 'new'}, 'Replaced Page', 'new.html');
+                alert('History state replaced!');
+            }
+        </script>
+        <button onclick="replaceStateExample()">Replace State</button>
+        <iframe src="about:blank" title="history.replaceState() example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>6. <code>history.length</code> (Property)</h3>
+    <p><strong>Description:</strong> Returns the number of entries in the browser's history stack.</p>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function showHistoryLength() {
+                alert('Number of entries in history: ' + history.length);
+            }
+        </script>
+        <button onclick="showHistoryLength()">Show History Length</button>
+        <iframe src="about:blank" title="history.length example" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <h3>7. <code>history.scrollRestoration</code></h3>
+    <p><strong>Description:</strong> Controls whether the browser restores the scroll position when navigating through the history.</p>
+    <ul>
+        <li>Values can be <code>'auto'</code> (default) or <code>'manual'</code>.</li>
+    </ul>
+    <div class="example">
+        <strong>Example:</strong>
+        <script>
+            function setScrollRestoration(mode) {
+                history.scrollRestoration = mode;
+                alert('Scroll restoration set to: ' + mode);
+            }
+        </script>
+        <button onclick="setScrollRestoration('auto')">Set to Auto</button>
+        <button onclick="setScrollRestoration('manual')">Set to Manual</button>
+        <iframe src="about:blank" title="history.scrollRestoration example" sandbox="allow-scripts"></iframe>
+    </div>
+</body>
+</html>

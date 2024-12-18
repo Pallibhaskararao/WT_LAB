@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search with User Input</title>
+</head>
+<body>
+
+    <h1>Search a Number in an Array (User Input)</h1>
+
+    <p>This example takes 5 numbers as input during runtime and checks whether a specified number exists in the array.</p>
+
+    <script>
+        // Step 1: Create an empty array to store 5 numbers
+        var numbers = [];
+
+        // Step 2: Use a loop to prompt the user to enter 5 numbers
+        for (var i = 0; i < 5; i++) {
+            var userInput = prompt("Enter number " + (i + 1) + ":");  // Prompt the user to enter a number
+            numbers.push(parseInt(userInput));  // Convert the input to an integer and add it to the array
+        }
+
+        // Step 3: Prompt the user to enter the number they want to search for
+        var numberToSearch = parseInt(prompt("Enter the number to search:"));
+
+        // Step 4: Check if the number exists in the array using `indexOf` method
+        var index = numbers.indexOf(numberToSearch);  // `indexOf` returns the index of the number or -1 if not found
+
+        // Step 5: Display the result to the user
+        if (index !== -1) {
+            document.write("<h3>The number " + numberToSearch + " is found at index " + index + ".</h3>");
+        } else {
+            document.write("<h3>The number " + numberToSearch + " was not found in the array.</h3>");
+        }
+
+    </script>
+
+</body>
+</html>

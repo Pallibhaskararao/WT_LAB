@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Text Box Data</title>
+</head>
+<body>
+    <!-- Text box element -->
+    <label for="myTextBox">Enter some text:</label>
+    <input type="text" id="myTextBox" value="Hello, World!">
+
+    <!-- Button to trigger the JavaScript function -->
+    <button onclick="getTextBoxValue()">Get Text</button>
+
+    <!-- Placeholder for displaying the result -->
+    <p id="output"></p>
+
+    <!-- JavaScript code -->
+    <script>
+        // Function to get the value from the text box
+        function getTextBoxValue() {
+            // Reference the text box by its ID
+            const textBox = document.getElementById("myTextBox");
+            
+            // Get the value from the text box
+            const textValue = textBox.value;
+
+            // Display the value in the output paragraph
+            document.getElementById("output").textContent = "You entered: " + textValue;
+        }
+    </script>
+</body>
+</html>
+
+<!--
+    Code Explanation
+1. The text box is identified by the id attribute (myTextBox).
+2. The button triggers the getTextBoxValue() function when clicked.
+3. The function retrieves the value of the text box and displays it inside the <p> element with id="output".
+-->    

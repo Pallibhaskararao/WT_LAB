@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Demonstration</title>
+</head>
+<body>
+
+    <h1>JavaScript Array Methods Demonstration</h1>
+    <p>This example demonstrates various JavaScript array methods and their usage.</p>
+
+    <script>
+        // Initialize a sample array
+        let numbers = [10, 20, 30, 40, 50];
+
+        // ============================
+        // push() - Adds one or more elements to the end of an array
+        // ============================
+        document.write("<h3>1. push() - Adding elements to the end of an array:</h3>");
+        numbers.push(30, 70);  // Adds 60 and 70 to the end of the array
+        document.write("Array after push: [" + numbers + "]<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // pop() - Removes the last element from an array
+        // ============================
+        document.write("<h3>2. pop() - Removing the last element from the array:</h3>");
+        let poppedElement = numbers.pop();  // Removes 70 from the array
+        document.write("Removed element: " + poppedElement + "<br/>");
+        document.write("Array after pop: [" + numbers + "]<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // indexOf() - Finds the index of the first occurrence of a value
+        // ============================
+        document.write("<h3>3. indexOf() - Finding the index of a specific element:</h3>");
+        let index = numbers.indexOf(30);  // Finds the index of 30
+        document.write("Index of 30: " + index + "<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // lastIndexOf() - Finds the index of the last occurrence of a value
+        // ============================
+        document.write("<h3>4. lastIndexOf() - Finding the last occurrence of a value:</h3>");
+        let lastIndex = numbers.lastIndexOf(30);  // Finds the last index of 30
+        document.write("Last index of 30: " + lastIndex + "<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // reverse() - Reverses the order of the elements in an array
+        // ============================
+        document.write("<h3>5. reverse() - Reversing the array:</h3>");
+        numbers.reverse();  // Reverses the array
+        document.write("Array after reverse: [" + numbers + "]<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // sort() - Sorts the elements of an array in place
+        // ============================
+        document.write("<h3>6. sort() - Sorting the array:</h3>");
+        numbers.sort((a, b) => a - b);  // Sorts numbers in ascending order
+        document.write("Array after sort: [" + numbers + "]<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // concat() - Combines two or more arrays
+        // ============================
+        document.write("<h3>7. concat() - Concatenating arrays:</h3>");
+        let moreNumbers = [80, 90, 100];
+        let combinedArray = numbers.concat(moreNumbers);  // Concatenates numbers and moreNumbers
+        document.write("Array after concat: [" + combinedArray + "]<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // find() - Finds the first element that passes a test
+        // ============================
+        document.write("<h3>8. find() - Finding the first element that matches a condition:</h3>");
+        let foundElement = combinedArray.find(num => num > 50);  // Finds the first number greater than 50
+        document.write("First number greater than 50: " + foundElement + "<br/>");
+
+        document.write("<br/>");
+
+        // ============================
+        // findIndex() - Finds the index of the first element that passes a test
+        // ============================
+        document.write("<h3>9. findIndex() - Finding the index of the first element that matches a condition:</h3>");
+        let foundIndex = combinedArray.findIndex(num => num > 50);  // Finds the index of the first number > 50
+        document.write("Index of first number greater than 50: " + foundIndex + "<br/>");
+
+    </script>
+
+</body>
+</html>

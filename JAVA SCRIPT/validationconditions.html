@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Validation</title>
+</head>
+<body>
+
+    <h1>Validation of String Conditions</h1>
+
+    <!-- Input to enter the string -->
+    <input type="text" id="inputString" placeholder="Enter a string to validate">
+    <button onclick="validateString()">Validate</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function validateString() {
+            let inputString = document.getElementById("inputString").value;
+            let resultMessage = "";
+
+            // Check for at least 1 special character using a regular expression
+            let hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(inputString);
+            
+            // Check if the first letter is capitalized
+            let startsWithCapital = /^[A-Z]/.test(inputString);
+
+            // Validation result
+            if (hasSpecialChar && startsWithCapital) {
+                resultMessage = "String is valid: At least one special character and the first letter is capitalized.";
+            } else {
+                resultMessage = "String is invalid.";
+                if (!hasSpecialChar) {
+                    resultMessage += " The string must contain at least one special character.";
+                }
+                if (!startsWithCapital) {
+                    resultMessage += " The first letter must be capitalized.";
+                }
+            }
+
+            // Display the result
+            document.getElementById("result").textContent = resultMessage;
+        }
+    </script>
+
+</body>
+</html>
+
+<!--
+Explanation of the Code:
+1.  HTML:
+Input field: The user can input a string that will be validated.
+Button: When clicked, it triggers the validateString() function to perform the validation.
+2.  JavaScript:
+hasSpecialChar: This variable checks if the string contains at least one special character using the regex /[!@#$%^&*(),.?":{}|<>]/.
+startsWithCapital: This variable checks if the first character of the string is uppercase using the regex /^[A-Z]/.
+validateString(): This function performs both checks and generates a result message, which is displayed to the user.
+3.  Result:
+If both conditions are met (special character and capitalized first letter), the message will say "valid." If either condition is not met, an appropriate message will be displayed explaining what is missing.
+-->

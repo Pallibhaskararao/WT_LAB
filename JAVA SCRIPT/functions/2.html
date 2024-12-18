@@ -1,0 +1,37 @@
+<html>
+   <head>
+       <script type="text/javascript">
+         function sayHello() 
+         {
+            document.write("Hello there!"); 
+         }
+      </script>
+  </head>
+   <body>
+      <p>Click the following button to call the function</p>
+      <form>
+         <input type="button" onclick="sayHello()" value="Say Hello">
+      </form>
+    </body>
+</html>
+
+<!--
+Explanation:
+<script type="text/javascript">: This tag is used to define JavaScript code. The type="text/javascript" attribute is technically optional in modern browsers but was historically used to specify the script type.
+
+function sayHello():
+A JavaScript function named sayHello() is defined. Functions are blocks of reusable code that perform a specific task when called.
+In this case, the function contains one statement:
+
+document.write("Hello there!");:
+The document.write() method writes text directly to the HTML document where it's called.
+Here, the text "Hello there!" is written to the page when the function sayHello() is invoked.
+Note: Since this function is defined but not yet called in the <head> section, nothing will appear immediately on the page at this point in time.
+
+The <form> and <input> Elements:
+The <form> tag is a container for form controls (such as buttons, text inputs, checkboxes, etc.). In this case, it contains a button:
+<input type="button" onclick="sayHello()" value="Say Hello">:
+This creates a button on the page with the label "Say Hello".
+onclick="sayHello()": The onclick attribute specifies an event handler for the click event. When the user clicks this button, the sayHello() function will be called.
+value="Say Hello": The value attribute specifies the text that appears on the button.
+-->

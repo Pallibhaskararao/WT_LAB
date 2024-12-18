@@ -10,8 +10,13 @@ a Thank You page. -->
     <h1>Gate application form </h1>
     <form action="submit.html" method="" class="gate">
         <label> NAME : </label>
-        <input type="text" for="name" class="gate">
+        <input type="text" for="name" class="gate" required>
         <br><br>
+        <label for="degree">Highest Degree:</label>
+        <select id="degree" name="degree" required>
+            <option value="B.Tech">B.Tech</option>
+            <option value="B.Sc">B.Sc</option>
+        </select><br><br>
 
         <label>Gender : </label>
         <input type="radio" name="gender" class="gate">

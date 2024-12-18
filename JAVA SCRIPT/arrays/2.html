@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Constructor Examples</title>
+</head>
+<body>
+
+    <h1>JavaScript Array Constructor Demonstration</h1>
+
+    <p>This example demonstrates creating arrays using the <code>new Array()</code> constructor in three different ways:</p>
+
+    <script>
+        // Example 1: Creating an Empty Array
+        var emptyArray = new Array();  // Creates an empty array
+        document.write("<h3>1. Empty Array:</h3>");
+        document.write("Array: " + emptyArray + "<br/>");
+        document.write("Length of array: " + emptyArray.length + "<br/>");
+        document.write("<br/>");
+
+        // Example 2: Creating an Array with a Specified Length
+        var arrayWithLength = new Array(5);  // Creates an array with 5 empty (undefined) elements
+        document.write("<h3>2. Array with Specified Length (5):</h3>");
+        document.write("Array: " + arrayWithLength + "<br/>");
+        document.write("Length of array: " + arrayWithLength.length + "<br/>");
+        document.write("<br/>");
+
+        // Example 3: Creating an Array with Multiple Values
+        var arrayWithValues = new Array("Guava", "Banana", "Cherry");  // Creates an array with specified values
+        document.write("<h3>3. Array with Multiple Values:</h3>");
+        document.write("Array: " + arrayWithValues + "<br/>");
+        document.write("Length of array: " + arrayWithValues.length + "<br/>");
+        document.write("<br/>");
+
+        // Example 4: Display each element of the array with values
+        document.write("<h3>Displaying Elements of the Array with Values:</h3>");
+        for (var i = 0; i < arrayWithValues.length; i++) {
+            document.write("Element " + (i + 1) + ": " + arrayWithValues[i] + "<br/>");
+        }
+    </script>
+
+</body>
+</html>

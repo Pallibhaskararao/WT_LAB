@@ -1,0 +1,35 @@
+<html>
+<body>
+<script>  
+function getcube(number)
+{  
+  alert(number * number * number);  
+}  
+</script>  
+<script>  
+  document.write(getcube(3)); // Calls function with 3 as an argument
+</script>
+</body>
+</html>
+
+<!--
+Explanation:
+<script> Tag:
+The first <script> tag contains JavaScript code to define a function.
+
+function getcube(number):
+This line defines a JavaScript function named getcube(), which accepts a single argument, number.
+Function: A function is a reusable block of code that performs a specific task. Here, the function will calculate the cube of the number passed to it.
+
+alert(number * number * number);:
+Inside the function, the alert() method is used. This method pops up a dialog box displaying the result of the calculation.
+The calculation number * number * number computes the cube of the provided number (i.e., the number raised to the power of 3).
+
+document.write(getcube(3));:
+This line calls the getcube() function, passing 3 as the argument.
+getcube(3) will calculate the cube of 3 (which is 27) and then display an alert with the result (27).
+
+Important: The value returned by the getcube() function is undefined because the function doesn't have a return statement. It only uses alert() to show the result.
+document.write(): This method writes the returned value (which is undefined) to the document. So, undefined will be written to the page where the script is executed.
+In this case, the actual output on the page will show the string undefined.
+-->

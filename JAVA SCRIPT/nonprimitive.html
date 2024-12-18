@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Non Primitive Data Types</title>
+    <style>
+        /* Basic styling for the body and pre tags */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Data Types: Object, Array, RegExp, Date</h1>
+    <div id="output">
+        <h2>Output</h2>
+        <pre></pre>
+    </div>
+
+    <script>
+        // Selecting the output element where we will log the results
+        const outputElement = document.querySelector('#output pre');
+
+        // Function to log messages to the output
+        function log(message) {
+            outputElement.textContent += message + '\n'; // Append each message with a newline
+        }
+
+        // Logging a header for the output
+        log("--- JavaScript Non Primitive Data Types Demonstration ---\n");
+
+        // 1. Object: A collection of key-value pairs
+        let person = {
+            name: "John Doe",
+            age: 30,
+            profession: "Web Developer",
+            greet: function() {
+                return `Hello, my name is ${this.name}. I am a ${this.profession}. My age is ${this.age}`;
+            }
+        };
+
+        log("1. Object Example:");
+        log("   Name: " + person.name);
+        log("   Age: " + person.age);
+        log("   Profession: " + person.profession);
+        log("   Greeting: " + person.greet()); // Calling the greet method
+
+        // 2. Array: A special type of object for ordered collections
+        let fruits = ["Apple", "Banana", "Orange", "Mango"];
+        log("2. Array Example:");
+        log("   Fruits: " + fruits.join(", ")); // Using join() to display the array as a string
+        log("   Second Fruit: " + fruits[1]); // Accessing the second element in the array (index 1)
+        log("   Array Length: " + fruits.length);
+
+        // 3. RegExp (Regular Expression): A pattern for matching text
+        let sentence = "The quick brown fox jumps over the lazy dog.";
+        let regex = /quick/; // Regular expression to match the word "quick"
+        let isMatch = regex.test(sentence); // Using test() to check if the word "quick" exists in the sentence
+        log("3. RegExp Example:");
+        log("   Sentence: " + sentence);
+        log("   Regular Expression: /quick/");
+        log("   Does the sentence contain 'quick'? " + (isMatch ? "Yes" : "No"));
+
+        // 4. Date: An object to handle date and time
+        let currentDate = new Date(); // Getting the current date and time
+        let formattedDate = currentDate.toLocaleString(); // Converting to a string representation
+        log("4. Date Example:");
+        log("   Current Date and Time: " + formattedDate);
+        log("   Day of the Week: " + currentDate.toLocaleString('en-us', { weekday: 'long' }));
+        log("   Full Date (Year-Month-Day): " + currentDate.toISOString().split('T')[0]);
+    </script>
+</body>
+</html>

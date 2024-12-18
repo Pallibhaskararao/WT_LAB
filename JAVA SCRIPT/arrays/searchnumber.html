@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search Example</title>
+</head>
+<body>
+
+    <h1>Search a Number in an Array</h1>
+
+    <p>This example creates an array with 5 numbers and checks whether a specific number exists in the array.</p>
+
+    <script>
+        // Step 1: Create an array with 5 numbers
+        var numbers = [12, 34, 56, 78, 90];  // An array containing 5 numbers
+
+        // Step 2: Specify the number to search
+        var numberToSearch = 56;  // The number we want to search for in the array
+
+        // Step 3: Search for the number in the array using the `indexOf` method
+        var index = numbers.indexOf(numberToSearch);  // `indexOf` returns the index of the first occurrence of the value
+
+        // Step 4: Display the result of the search
+        if (index !== -1) {
+            // If `indexOf` does not return -1, the number is found
+            document.write("<h3>Number Found!</h3>");
+            document.write("The number " + numberToSearch + " is found at index " + index + ".<br/>");
+        } else {
+            // If `indexOf` returns -1, the number is not found
+            document.write("<h3>Number Not Found!</h3>");
+            document.write("The number " + numberToSearch + " is not present in the array.<br/>");
+        }
+
+        // Step 5: Display the original array for reference
+        document.write("<br/>");
+        document.write("Original Array: [" + numbers + "]<br/>");
+    </script>
+
+</body>
+</html>

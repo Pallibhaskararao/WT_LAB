@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods Simplified</title>
+</head>
+<body>
+    <h1>JavaScript DOM Methods Simplified Examples</h1>
+
+    <!-- getElementById Example -->
+    <h3>1. getElementById()</h3>
+    <script type="text/javascript">  
+        function getCube(){  
+            var number = document.getElementById("number").value;  
+            alert("Cube: " + (number * number * number));  
+        }  
+    </script>  
+    <form>  
+        Enter No: <input type="text" id="number" /><br/>  
+        <input type="button" value="Get Cube" onclick="getCube()" />  
+    </form>  
+
+    <!-- getElementsByName Example -->
+    <h3>2. getElementsByName()</h3>
+    <script type="text/javascript">  
+        function totalElements() {  
+            var allGenders = document.getElementsByName("gender");  
+            alert("Total Genders: " + allGenders.length);  
+        }  
+    </script>  
+    <form>  
+        Male: <input type="radio" name="gender" value="male">  
+        Female: <input type="radio" name="gender" value="female">  
+        <input type="button" onclick="totalElements()" value="Total Genders">  
+    </form>
+
+    <!-- getElementsByClassName Example -->
+    <h3>3. getElementsByClassName()</h3>
+    <script type="text/javascript">  
+        function showClassElements(){  
+            var elements = document.getElementsByClassName("myClass");  
+            alert("Number of elements with class 'myClass': " + elements.length);  
+        }  
+    </script>  
+    <p class="myClass">This is paragraph 1.</p>
+    <p class="myClass">This is paragraph 2.</p>
+    <input type="button" onclick="showClassElements()" value="Show Class Elements">  
+
+    <!-- getElementsByTagName Example -->
+    <h3>4. getElementsByTagName()</h3>
+    <script type="text/javascript">  
+        function showTagElements(){  
+            var listItems = document.getElementsByTagName("li");  
+            alert("Total <li> elements: " + listItems.length);  
+        }  
+    </script>  
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <input type="button" onclick="showTagElements()" value="Show List Elements">  
+
+    <!-- querySelector Example -->
+    <h3>5. querySelector()</h3>
+    <script type="text/javascript">  
+        function firstParagraph() {  
+            var para = document.querySelector(".container p");  
+            alert("First paragraph content: " + para.innerHTML);  
+        }  
+    </script>  
+    <div class="container">
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+    </div>
+    <input type="button" onclick="firstParagraph()" value="Show First Paragraph">  
+
+    <!-- querySelectorAll Example -->
+    <h3>6. querySelectorAll()</h3>
+    <script type="text/javascript">  
+        function allParagraphs() {  
+            var paragraphs = document.querySelectorAll(".container p");  
+            alert("Total paragraphs: " + paragraphs.length);  
+        }  
+    </script>  
+    <div class="container">
+        <p>This is paragraph 1.</p>
+        <p>This is paragraph 2.</p>
+        <p>This is paragraph 3.</p>
+    </div>
+    <input type="button" onclick="allParagraphs()" value="Show All Paragraphs">  
+
+    <!-- write Example -->
+    <h3>7. document.write()</h3>
+    <script type="text/javascript">  
+        function writeExample() {  
+            document.write("This is added using document.write().");  
+        }  
+    </script>  
+    <input type="button" onclick="writeExample()" value="Write Example">  
+
+    <!-- writeln Example -->
+    <h3>8. document.writeln()</h3>
+    <script type="text/javascript">  
+        function writeLnExample() {  
+            document.writeln("This line is added using writeln().");  
+            document.writeln("Another line added with writeln.");  
+        }  
+    </script>  
+    <input type="button" onclick="writeLnExample()" value="Writeln Example">  
+</body>
+</html>

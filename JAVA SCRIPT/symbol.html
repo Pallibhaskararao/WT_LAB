@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Symbol Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Symbol Example</h1>
+    <div id="output">
+        <h2>Output</h2>
+        <pre></pre>
+    </div>
+
+    <script>
+        // Select the output element where we will log the results
+        const outputElement = document.querySelector('#output pre');
+
+        // Function to log messages to the output
+        function log(message) {
+            outputElement.textContent += message + '\n'; // Append each message with a newline
+        }
+
+        log("--- Symbol Example ---\n");
+
+        // Create a unique symbol
+        const uniqueKey = Symbol('uniqueProperty');
+
+        // Create an object with a property using the Symbol as the key
+        let person = {
+            name: 'Alice',
+            age: 30
+        };
+
+        // Adding a Symbol-keyed property to the object
+        person[uniqueKey] = 'Special Value';
+
+        // Log the person object and its properties
+        log("Person Object:");
+        log("   Name: " + person.name);
+        log("   Age: " + person.age);
+        log("   Symbol Property: " + person[uniqueKey]);  // Accessing the Symbol-keyed property
+
+        // Trying to access the Symbol property by name (this will not work!)
+        log("   Symbol property by name: " + person['uniqueProperty']); // Undefined, as the Symbol key is unique
+    </script>
+</body>
+</html>

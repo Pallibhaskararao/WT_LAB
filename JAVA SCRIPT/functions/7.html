@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>  
+function addition() 
+{  
+  var a = document.myform.num1.value;  
+  var b = document.myform.num2.value; 
+  a = parseInt(a);  // Converts the inputs to integers
+  b = parseInt(b); 
+  document.write("The sum is " + (a + b));  // Displays the sum
+}  
+</script>  
+<body>  
+<form name="myform" onsubmit="addition(); return false;">  
+  Num-1: <input type="number" name="num1"><br/>  
+  Num-2: <input type="number" name="num2"><br/>  
+  <input type="submit" value="Add">  
+</form>  
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Scope and Differences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Variable Scope and Differences</h1>
+    <div id="output">
+        <h2>Output</h2>
+        <pre></pre>
+    </div>
+    <script>
+        const outputElement = document.querySelector('#output pre');
+
+        function log(message) {
+            outputElement.textContent += message + '\n';
+        }
+
+        // Demonstrating var (function-scoped)
+        function demonstrateVar() {
+            log("--- var Demonstration ---");
+            var number = 10;
+            log("Given Number:" + number)
+            if (true) {
+                var number = 20; // Redeclares the same variable
+                log("Inside if block: " + number); // Output: 20
+            }
+            log("Outside if block: " + number); // Output: 20 (same variable)
+        }
+
+        // Demonstrating let (block-scoped)
+        function demonstrateLet() {
+            log("--- let Demonstration ---");
+            let number = 10;
+            log("Given Number:" + number);
+            if (true) {
+                let number = 20; // New variable scoped to this block
+                log("Inside if block: " + number); // Output: 20
+            }
+            log("Outside if block: " + number); // Output: 10 (original variable)
+        }
+
+        // Demonstrating const (block-scoped and immutable)
+        function demonstrateConst() {
+            log("--- const Demonstration ---");
+            const number = 10;
+            log("Given Number:" + number);
+            log("Initial value: " + number); // Output: 10
+            if (true) {
+                const number = 20; // New constant scoped to this block
+                log("Inside if block: " + number); // Output: 20
+            }
+            log("Outside if block: " + number); // Output: 10 (original constant remains unchanged)
+
+            // Uncommenting the next line will throw an error:
+            // number = 30; // Error: Assignment to constant variable
+        }
+
+        // Demonstrating the difference between let and const
+        function demonstrateLetVsConst() {
+            log("--- let vs const Demonstration ---");
+
+            // let can be reassigned
+            let number = 10;
+            log("Initial let value: " + number); // Output: 10
+            number = 20;
+            log("Reassigned let value: " + number); // Output: 20
+
+            // const cannot be reassigned
+            const constantNumber = 10;
+            log("Initial const value: " + constantNumber); // Output: 10
+            constantNumber = 20; // Error: Assignment to constant variable
+            log("Reassigned const value: " + constantNumber);
+        }
+
+        // Execute the functions and display results in the webpage
+        demonstrateVar();
+        demonstrateLet();
+        demonstrateConst();
+        demonstrateLetVsConst();
+    </script>
+</body>
+</html>

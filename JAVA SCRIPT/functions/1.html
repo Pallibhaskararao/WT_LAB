@@ -1,0 +1,34 @@
+<html>
+   <head>
+       <script type="text/javascript">
+         function sayHello() 
+         {
+            document.write("Hello there!<br><br>"); 
+         }
+         sayHello(); // Function is called immediately
+      </script>
+  </head>
+   <body>
+      <script type="text/javascript">
+         sayHello(); // Function is called again in the body
+      </script>
+   </body>
+</html>
+
+<!--
+Explanation:
+
+function sayHello():
+A JavaScript function named sayHello() is defined.
+A function is a reusable block of code that performs a specific task when called. In this case, the sayHello() function writes a string to the document.
+
+document.write("Hello there!<br><br>");:
+This is the main action of the sayHello() function.
+document.write() is a JavaScript method that writes content directly to the HTML document.
+The string "Hello there!" is displayed on the page.
+The <br><br> at the end of the string ensures that two line breaks are inserted after the text, creating space before any subsequent content.
+
+sayHello();:
+This line immediately calls the sayHello() function after its definition in the <head> section.
+When the page is loaded, the function runs, and the text "Hello there!" is written to the page. 
+-->

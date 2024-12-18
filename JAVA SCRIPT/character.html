@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel or Not</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Check if Character is a Vowel</h2>
+
+    <!-- Input for character -->
+    <input type="text" id="charInput" maxlength="1" placeholder="Enter a character">
+    
+    <!-- Button to trigger vowel check function -->
+    <button onclick="checkVowel()">Check if Vowel</button>
+    
+    <!-- Paragraph to show the result -->
+    <p id="result"></p>
+
+    <script>
+        // Function to check if the entered character is a vowel
+        function checkVowel() {
+            // Step 1: Get the input character from the input field
+            let char = document.getElementById("charInput").value;
+
+            // Step 2: Validate if the input is a single character
+            if (char.length !== 1) {
+                document.getElementById("result").textContent = "Please enter exactly one character.";
+                return; // Exit the function if the input is not a single character
+            }
+
+            //Step 3: to convert to lower case
+            char = char.toLowerCase();
+
+            // Step 4: Check if the character is a vowel
+            if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+                // If the character is a vowel, display a success message
+                document.getElementById("result").textContent = char + " is a vowel.";
+            } else {
+                // If the character is not a vowel, display a failure message
+                document.getElementById("result").textContent = char + " is not a vowel.";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Methods Example</title>
+</head>
+<body>
+
+  <h2>Demonstrating Various Window Methods</h2>
+  
+  <!-- Button to trigger each method -->
+  <button onclick="showAlert()">Show Alert</button>
+  <button onclick="showConfirm()">Show Confirm</button>
+  <button onclick="showPrompt()">Show Prompt</button>
+  <button onclick="setTimeoutExample()">Set Timeout Example</button>
+  <button onclick="openNewWindow()">Open New Window</button>
+  <button onclick="closeWindow()">Close This Window</button>
+  
+  <p id="output"></p>
+  
+  <script>
+    // 1. window.alert(): Displays an alert box with a message and an OK button.
+    function showAlert() {
+      window.alert("This is an alert box!");
+      // Explanation: It pauses script execution until the user clicks OK.
+    }
+    
+    // 2. window.confirm(): Displays a dialog box with a message and OK/Cancel buttons. 
+    // Returns true if OK is clicked, false if Cancel is clicked.
+    function showConfirm() {
+      var result = window.confirm("Are you sure you want to continue?");
+      if (result) {
+        document.getElementById("output").innerText = "User clicked OK!";
+      } else {
+        document.getElementById("output").innerText = "User clicked Cancel.";
+      }
+    }
+
+    // 3. window.prompt(): Displays a dialog box with a message and an input field. 
+    // Returns the input value if entered, or null if Cancel is clicked.
+    function showPrompt() {
+      var name = window.prompt("What is your name?");
+      if (name !== null && name !== "") {
+        document.getElementById("output").innerText = "Hello, " + name + "!";
+      } else {
+        document.getElementById("output").innerText = "No name entered.";
+      }
+    }
+
+    // 4. window.setTimeout(): Executes a function after a specified delay (in milliseconds).
+    function setTimeoutExample() {
+      window.setTimeout(function() {
+        alert("This message appears after 3 seconds.");
+      }, 3000);  // Waits for 3000 milliseconds (3 seconds)
+    }
+
+    // 5. window.open(): Opens a new browser window or tab with a specified URL and features.
+    function openNewWindow() {
+      let newWindow = window.open("https://www.example.com", "newWindow", "width=600,height=400,resizable=yes");
+      newWindow.document.write("<h1>This is a new window opened by window.open()</h1>");
+      newWindow.document.write("<p>You can interact with this window separately.</p>");
+    }
+
+    // 6. window.close(): Closes the current window (works only for windows opened by script).
+    function closeWindow() {
+      window.close();  // This will close the current window.
+      // Important: window.close() will only work if the window was opened by window.open().
+      // It will not close the main window/tab unless opened by a script.
+    }
+  </script>
+
+</body>
+</html>

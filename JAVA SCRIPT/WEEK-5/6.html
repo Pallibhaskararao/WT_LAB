@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        p {
+            font-size: 18px;
+        }
+        input, button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Linear Search Program</h1>
+    <p>Enter a number to search in the array:</p>
+
+    <!-- Input for entering the number to search -->
+    <input type="number" id="searchNumber" placeholder="Enter number to search" required>
+    <button onclick="linearSearch()">Search</button>
+
+    <!-- Display the result here -->
+    <div id="result"></div>
+
+    <script>
+        // Array to search in
+        const numbers = [12, 45, 23, 56, 78, 34, 90, 22, 67, 89];
+
+        // Function to perform linear search
+        function linearSearch() {
+            // Get the number entered by the user
+            let searchNumber = document.getElementById("searchNumber").value;
+
+            // Ensure that the input is a valid number
+            if (searchNumber === "" || isNaN(searchNumber)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Perform linear search in the array
+            let found = false;
+            let index = -1;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] == searchNumber) {
+                    found = true;
+                    index = i;
+                    break;
+                }
+            }
+
+            // Display the result
+            if (found) {
+                document.getElementById("result").innerHTML = `<p>Number ${searchNumber} found at index ${index}.</p>`;
+            } else {
+                document.getElementById("result").innerHTML = `<p>Number ${searchNumber} not found in the array.</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

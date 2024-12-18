@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Bitwise Operators</title>
+</head>
+<body>
+
+    <script>
+        var a = 5; // 0101 in binary
+        var b = 3; // 0011 in binary
+
+        // Bitwise AND
+        document.write("Bitwise AND (&): " + a + " & " + b + " = " + (a & b)); // Prints: 1
+        document.write("<br>");
+
+        // Bitwise OR
+        document.write("Bitwise OR (|): " + a + " | " + b + " = " + (a | b)); // Prints: 7
+        document.write("<br>");
+
+        // Bitwise XOR
+        document.write("Bitwise XOR (^): " + a + " ^ " + b + " = " + (a ^ b)); // Prints: 6
+        document.write("<br>");
+
+        // Bitwise NOT
+        document.write("Bitwise NOT (~): ~" + a + " = " + (~a)); // Prints: -6
+        document.write("<br>");
+
+        // Left Shift
+        document.write("Left Shift (<<): " + a + " << 1 = " + (a << 1)); // Prints: 10
+        document.write("<br>");
+
+        // Right Shift
+        document.write("Right Shift (>>): " + a + " >> 1 = " + (a >> 1)); // Prints: 2
+        document.write("<br>");
+
+        // Right Shift with Zero fill
+        document.write("Right Shift with Zero (>>>): " + a + " >>> 1 = " + (a >>> 1)); // Prints: 2
+        document.write("<br>");
+    </script>
+
+</body>
+</html>

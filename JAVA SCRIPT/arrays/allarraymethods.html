@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Methods Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+    }
+    .method {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .method h3 {
+      margin: 0 0 10px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .result {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Array Methods Demonstration</h1>
+
+  <div id="methods"></div>
+
+  <script>
+    // Initial array
+    let fruits = ['apple', 'banana', 'orange', 'grape'];
+
+    // Array to store methods and their results
+    const methods = [];
+
+    // 1. push() - Adds one or more elements to the end of an array.
+    let pushedResult = [...fruits];  // Clone array to keep original intact
+    pushedResult.push('kiwi', 'mango');
+    methods.push({
+      name: 'push()',
+      description: 'Adds one or more elements to the end of an array.',
+      code: "pushedResult.push('kiwi', 'mango');",
+      result: pushedResult
+    });
+
+    // 2. pop() - Removes the last element from an array.
+    let poppedResult = pushedResult.slice();  // Clone array
+    let lastFruit = poppedResult.pop();
+    methods.push({
+      name: 'pop()',
+      description: 'Removes the last element from the array.',
+      code: "let lastFruit = poppedResult.pop();",
+      result: { removedElement: lastFruit, newArray: poppedResult }
+    });
+
+    // 3. indexOf() - Finds the first index of a specified element.
+    let indexOfResult = fruits.indexOf('orange');
+    methods.push({
+      name: 'indexOf()',
+      description: 'Finds the first index of a specified element.',
+      code: "let indexOfResult = fruits.indexOf('orange');",
+      result: indexOfResult
+    });
+
+    // 4. lastIndexOf() - Finds the last index of a specified element.
+    let lastIndexOfResult = fruits.lastIndexOf('banana');
+    methods.push({
+      name: 'lastIndexOf()',
+      description: 'Finds the last index of a specified element.',
+      code: "let lastIndexOfResult = fruits.lastIndexOf('banana');",
+      result: lastIndexOfResult
+    });
+
+    // 5. reverse() - Reverses the array in place.
+    let reversedResult = [...fruits].reverse();
+    methods.push({
+      name: 'reverse()',
+      description: 'Reverses the array in place.',
+      code: "let reversedResult = [...fruits].reverse();",
+      result: reversedResult
+    });
+
+    // 6. sort() - Sorts the elements of an array.
+    let sortedResult = [...fruits].sort();
+    methods.push({
+      name: 'sort()',
+      description: 'Sorts the elements of an array.',
+      code: "let sortedResult = [...fruits].sort();",
+      result: sortedResult
+    });
+
+    // 7. concat() - Merges two or more arrays into a new array.
+    let veggies = ['carrot', 'tomato'];
+    let concatResult = fruits.concat(veggies);
+    methods.push({
+      name: 'concat()',
+      description: 'Merges two or more arrays into a new array.',
+      code: "let concatResult = fruits.concat(veggies);",
+      result: concatResult
+    });
+
+    // 8. find() - Finds the first element that satisfies a condition.
+    let findResult = fruits.find(item => item.length > 5);
+    methods.push({
+      name: 'find()',
+      description: 'Finds the first element that satisfies a condition.',
+      code: "let findResult = fruits.find(item => item.length > 5);",
+      result: findResult
+    });
+
+    // 9. findIndex() - Finds the index of the first element that satisfies a condition.
+    let findIndexResult = fruits.findIndex(item => item === 'grape');
+    methods.push({
+      name: 'findIndex()',
+      description: 'Finds the index of the first element that satisfies a condition.',
+      code: "let findIndexResult = fruits.findIndex(item => item === 'grape');",
+      result: findIndexResult
+    });
+
+    // 10. shift() - Removes the first element from an array.
+    let shiftedResult = fruits.slice();
+    let firstFruit = shiftedResult.shift();
+    methods.push({
+      name: 'shift()',
+      description: 'Removes the first element from an array.',
+      code: "let firstFruit = shiftedResult.shift();",
+      result: { removedElement: firstFruit, newArray: shiftedResult }
+    });
+
+    // 11. unshift() - Adds one or more elements to the beginning of an array.
+    let unshiftedResult = fruits.slice();
+    unshiftedResult.unshift('blueberry', 'strawberry');
+    methods.push({
+      name: 'unshift()',
+      description: 'Adds one or more elements to the beginning of an array.',
+      code: "unshiftedResult.unshift('blueberry', 'strawberry');",
+      result: unshiftedResult
+    });
+
+    // 12. join() - Joins array elements into a string, with a separator.
+    let joinedResult = fruits.join(', ');
+    methods.push({
+      name: 'join()',
+      description: 'Joins array elements into a string, with a separator.',
+      code: "let joinedResult = fruits.join(', ');",
+      result: joinedResult
+    });
+
+    // Dynamically render the methods and results
+    const methodsDiv = document.getElementById('methods');
+    methods.forEach(method => {
+      const methodDiv = document.createElement('div');
+      methodDiv.className = 'method';
+      methodDiv.innerHTML = `
+        <h3>${method.name}</h3>
+        <p>${method.description}</p>
+        <pre>${method.code}</pre>
+        <p><span class="result">Result:</span> ${JSON.stringify(method.result, null, 2)}</p>
+      `;
+      methodsDiv.appendChild(methodDiv);
+    });
+  </script>
+
+</body>
+</html>

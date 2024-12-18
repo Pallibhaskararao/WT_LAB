@@ -1,0 +1,40 @@
+<!DOCTYPE html>		
+
+<head>
+    <title>JavaScript typeof Operator</title>
+</head>
+<body>
+    <script>
+        var x, y, z;   // Declaring variables
+
+        x = 10;    // Assigning a number to 'x'
+        y = "Hello";  // Assigning a string to 'y'
+        z = true;  // Assigning a boolean to 'z'
+
+        // Using typeof operator to check the type of 'x'
+        document.write("The type of x is: " + typeof x + "<br>"); // Prints: number
+
+        // Using typeof operator to check the type of 'y'
+        document.write("The type of y is: " + typeof y + "<br>"); // Prints: string
+
+        // Using typeof operator to check the type of 'z'
+        document.write("The type of z is: " + typeof z + "<br>"); // Prints: boolean
+
+        // Using typeof with an array (Arrays are objects in JavaScript)
+        var arr = [1, 2, 3];
+        document.write("The type of arr is: " + typeof arr + "<br>"); // Prints: object
+
+        // Using typeof with a function
+        function myFunction() {}
+        document.write("The type of myFunction is: " + typeof myFunction + "<br>"); // Prints: function
+
+        // Using typeof with undefined
+        var w;
+        document.write("The type of w is: " + typeof w + "<br>"); // Prints: undefined
+
+        // Using typeof with null (null is an object in JavaScript)
+        var a = null;
+        document.write("The type of a is: " + typeof a + "<br>"); // Prints: object
+    </script>
+</body>
+</html>

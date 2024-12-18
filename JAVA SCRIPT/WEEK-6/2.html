@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Validator</h1>
+        <!-- Form for email input -->
+        <form id="emailForm">
+            <label for="email">Enter Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <button type="submit">Validate</button>
+        </form>
+        <p id="message" style="text-align:center; margin-top: 10px; color: red;"></p>
+    </div>
+
+    <script>
+        // JavaScript function to validate email based on the given conditions
+        function validateEmail(email) {
+            // Condition a: At least one @ symbol
+            if (email.indexOf('@') === -1) {
+                return "Email must contain at least one '@' symbol.";
+            }
+
+            // Condition b: At least two dots (.)
+            const dotCount = (email.match(/\./g) || []).length; // Count the number of dots
+            if (dotCount < 2) {
+                return "Email must contain at least two dots ('.').";
+            }
+
+            // Condition c: No consecutive dots or @
+            if (email.includes('..') || email.includes('@@') || email.includes('.@') || email.includes('@.')) {
+                return "Email cannot have consecutive dots or '@' symbols.";
+            }
+
+            // Condition d: First and last characters cannot be . or @
+            if (email.startsWith('.') || email.startsWith('@') || email.endsWith('.') || email.endsWith('@')) {
+                return "Email cannot start or end with '.' or '@'.";
+            }
+
+            // If all conditions pass, return null (no errors)
+            return null;
+        }
+
+        // Event listener for form submission
+        document.getElementById("emailForm").onsubmit = function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get email input value
+            const email = document.getElementById("email").value;
+            const errorMessage = validateEmail(email); // Validate the email
+
+            // Display appropriate message based on validation
+            if (errorMessage) {
+                document.getElementById("message").textContent = errorMessage; // Show error
+                document.getElementById("message").style.color = "red";
+            } else {
+                document.getElementById("message").textContent = "Email is valid!"; // Show success
+                document.getElementById("message").style.color = "green";
+            }
+        };
+    </script>
+</body>
+</html>

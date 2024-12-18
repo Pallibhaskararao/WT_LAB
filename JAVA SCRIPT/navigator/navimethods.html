@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Navigator Object Demonstration</title>
+</head>
+<body>
+
+<h2>JavaScript Navigator Object Methods and Properties</h2>
+
+<script>
+    // 1. navigator.geolocation.getCurrentPosition()
+    // Gets the user's current position (latitude and longitude).
+    navigator.geolocation.getCurrentPosition(function(position) {
+        document.writeln("<br>Current Location (getCurrentPosition):");
+        document.writeln("<br>Latitude: " + position.coords.latitude);
+        document.writeln("<br>Longitude: " + position.coords.longitude);
+    }, function(error) {
+        document.writeln("<br>Error in getting location using getCurrentPosition: " + error.message);
+    });
+
+    // 2. navigator.geolocation.watchPosition()
+    // Watches the position of the user continuously and calls the success callback when the position changes.
+    const watchId = navigator.geolocation.watchPosition(function(position) {
+        document.writeln("<br>Watching Location (watchPosition):");
+        document.writeln("<br>Latitude: " + position.coords.latitude);
+        document.writeln("<br>Longitude: " + position.coords.longitude);
+        // Stop watching after 10 seconds
+        setTimeout(function() {
+            navigator.geolocation.clearWatch(watchId);
+            document.writeln("<br>Stopped watching the location.");
+        }, 10000);
+    }, function(error) {
+        document.writeln("<br>Error in watching location: " + error.message);
+    });
+
+    // 3. navigator.vibrate()
+    // Vibrates the device for a given duration or pattern.
+    if (navigator.vibrate) {
+        document.writeln("<br>Vibrating device for 1 second...");
+        navigator.vibrate(1000);  // Vibrates for 1 second.
+    }
+
+    // 4. navigator.getBattery()
+    // Retrieves battery status like battery level and charging state.
+    navigator.getBattery().then(function(battery) {
+        document.writeln("<br>Battery Info (getBattery):");
+        document.writeln("<br>Battery Level: " + (battery.level * 100) + "%");
+        document.writeln("<br>Is Charging: " + battery.charging);
+    }).catch(function(err) {
+        document.writeln("<br>Error in getting battery information: " + err);
+    });
+
+    // 5. navigator.connection
+    // Provides information about the network connection (type, speed, etc.).
+    if (navigator.connection) {
+        document.writeln("<br>Network Information (navigator.connection):");
+        document.writeln("<br>Effective Type: " + navigator.connection.effectiveType);
+        document.writeln("<br>Downlink Speed: " + navigator.connection.downlink + " Mbps");
+    }
+
+    // 6. navigator.onLine
+    // Checks if the browser is online or offline.
+    if (navigator.onLine) {
+        document.writeln("<br>Browser is Online.");
+    } else {
+        document.writeln("<br>Browser is Offline.");
+    }
+
+    // 7. navigator.mediaDevices.getUserMedia()
+    // Requests access to the user's media devices (camera, microphone).
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(function(stream) {
+            document.writeln("<br>Media Access (getUserMedia): Granted");
+            // Show video on the webpage (for demonstration)
+            var videoElement = document.createElement("video");
+            videoElement.srcObject = stream;
+            videoElement.play();
+            document.body.appendChild(videoElement);
+        })
+        .catch(function(error) {
+            document.writeln("<br>Error in getting media access: " + error.message);
+        });
+
+    // 8. navigator.getGamepads()
+    // Retrieves the gamepad status (if available).
+    if (navigator.getGamepads) {
+        const gamepads = navigator.getGamepads();
+        document.writeln("<br>Gamepads Information (getGamepads):");
+        if (gamepads) {
+            for (let i = 0; i < gamepads.length; i++) {
+                if (gamepads[i]) {
+                    document.writeln("<br>Gamepad " + i + " connected.");
+                    document.writeln("<br>Buttons pressed: " + gamepads[i].buttons.filter(button => button.pressed).length);
+                }
+            }
+        }
+    }
+
+    // 9. navigator.registerProtocolHandler()
+    // Registers a web app to handle a specific protocol like `mailto` or `tel`.
+    // _This is deprecated and not widely supported, so it may not function as expected in most browsers._
+    try {
+        navigator.registerProtocolHandler("mailto", "mailto:%s", "My Email App");
+        document.writeln("<br>Protocol handler for mailto registered (if supported).");
+    } catch (e) {
+        document.writeln("<br>Protocol handler registration is not supported.");
+    }
+
+    // 10. navigator.requestMIDIAccess()
+    // Requests access to the user's MIDI devices (used for musical instruments).
+    navigator.requestMIDIAccess().then(function(midiAccess) {
+        document.writeln("<br>MIDI Access (requestMIDIAccess): Granted");
+    }).catch(function(err) {
+        document.writeln("<br>Error in getting MIDI access: " + err);
+    });
+
+    // 11. navigator.geolocation.clearWatch()
+    // This method is already used earlier in the watchPosition example to stop watching location.
+    // If watchPosition is still running, you can call clearWatch(watchId) to stop it.
+</script>
+
+</body>
+</html>

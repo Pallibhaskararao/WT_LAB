@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math.floor() vs Math.ceil() Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math.floor() vs Math.ceil() Demonstration</h1>
+    <p>Enter a decimal number and see the results of <code>Math.floor()</code> and <code>Math.ceil()</code>:</p>
+    <label for="numberInput">Enter a number:</label>
+    <input type="text" id="numberInput" placeholder="e.g., 4.7 or -3.2">
+    <button onclick="showResults()">Calculate</button>
+    <div class="output" id="output"></div>
+
+    <script>
+        function showResults() {
+            const input = document.getElementById('numberInput').value;
+            const number = parseFloat(input);
+
+            // Validate input
+            if (isNaN(number)) {
+                document.getElementById('output').innerHTML = `<p style="color: red;">Please enter a valid number.</p>`;
+                return;
+            }
+
+            // Calculate floor and ceil
+            const floorValue = Math.floor(number);
+            const ceilValue = Math.ceil(number);
+
+            // Display results
+            document.getElementById('output').innerHTML = `
+                <p><strong>Original Number:</strong> ${number}</p>
+                <p><strong>Math.floor():</strong> ${floorValue} (Rounds down)</p>
+                <p><strong>Math.ceil():</strong> ${ceilValue} (Rounds up)</p>
+            `;
+        }
+    </script>
+</body>
+</html>

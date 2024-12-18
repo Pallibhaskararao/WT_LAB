@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() 
+{
+   	var a = window.prompt("Enter a");
+   	var b = window.prompt("Enter b");
+   	a = parseInt(a);  // Converts the string input to an integer
+   	b = parseInt(b);
+	window.alert(a + b);  // Alerts the sum
+}
+</script>
+</head>
+<script>
+myFunction();  // Calls the function when the page loads
+</script>
+</body>
+</html>
+
+<!--
+Explanation:
+<script> Tag: This tag contains JavaScript code that will run when the page is loaded.
+function myFunction(): A JavaScript function named myFunction is defined. This function doesn't accept any parameters; instead, it prompts the user for input and performs a calculation.
+Inside the function:
+	var a = window.prompt("Enter a");:
+	This line uses the window.prompt() method to display a prompt dialog box, asking the user to input a value for a.
+	The prompt() method returns the value as a string. For example, if the user enters 5, the value of a will be the string "5".
+	var b = window.prompt("Enter b");:
+	Similarly, this line prompts the user to input a value for b.
+	The result is also a string (e.g., if the user enters 10, b will be the string "10").
+	a = parseInt(a);:
+	This line converts the string value of a into an integer using the parseInt() function. parseInt() parses a string and returns an integer value.
+	For example, if a = "5", then parseInt(a) will convert it to the integer 5.
+	b = parseInt(b);:
+	Similarly, parseInt(b) converts the string value of b into an integer.
+	window.alert(a + b);:
+	This line uses the window.alert() method to display the sum of a and b in an alert dialog box.
+	The alert() method creates a pop-up window that shows the result of adding the two integers a and b.
+	For example, if the user enters 5 for a and 10 for b, the alert will show 15.
+
+
+myFunction();: This line calls the myFunction() function, which was defined earlier.
+The function will be executed immediately when the page loads.
+This triggers the prompts asking the user to input values for a and b, converts the inputs to integers, calculates the sum, and displays the result in an alert.
+-->

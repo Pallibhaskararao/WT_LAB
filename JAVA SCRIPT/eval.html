@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript eval() Example</title>
+</head>
+<body>
+    <h1>JavaScript <code>eval()</code> Example</h1>
+    <p>Type any valid JavaScript expression below and evaluate it:</p>
+    <input type="text" id="expression" placeholder="Enter JavaScript code" style="width: 300px;">
+    <button onclick="evaluateExpression()">Evaluate</button>
+    <p id="result"></p>
+
+    <script>
+        function evaluateExpression() {
+            const expression = document.getElementById('expression').value;
+
+            try {
+                // Use eval to evaluate the entered expression
+                const result = eval(expression);
+                document.getElementById('result').innerText = `Result: ${result}`;
+            } catch (error) {
+                // Handle any errors in the evaluated code
+                document.getElementById('result').innerText = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

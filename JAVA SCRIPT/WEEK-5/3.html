@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        p {
+            font-size: 18px;
+        }
+        input, button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prime Number Generator</h1>
+    <p>Enter a number to generate all prime numbers up to that number.</p>
+
+    <!-- Input for entering the number -->
+    <input type="number" id="inputNumber" placeholder="Enter a number" required>
+    <button onclick="generatePrimes()">Generate Prime Numbers</button>
+
+    <!-- Display the result here -->
+    <div id="result"></div>
+
+    <script>
+        // Function to check if a number is prime
+        function isPrime(num) {
+            // A number less than 2 is not prime
+            if (num <= 1) return false;
+            // Check divisibility from 2 to the square root of the number
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false; // Not a prime number
+                }
+            }
+            return true; // Prime number
+        }
+
+        // Function to generate all primes up to the given number
+        function generatePrimes() {
+            // Get the value from the input field
+            let maxNumber = document.getElementById("inputNumber").value;
+            
+            // Ensure that the input is a valid number
+            if (maxNumber === "" || isNaN(maxNumber) || maxNumber <= 1) {
+                alert("Please enter a valid number greater than 1.");
+                return;
+            }
+
+            // Initialize an empty array to store prime numbers
+            let primeNumbers = [];
+            
+            // Loop through all numbers from 2 to the max number
+            for (let num = 2; num <= maxNumber; num++) {
+                // If the number is prime, add it to the primeNumbers array
+                if (isPrime(num)) {
+                    primeNumbers.push(num);
+                }
+            }
+
+            // Display the prime numbers on the webpage
+            if (primeNumbers.length > 0) {
+                document.getElementById("result").innerHTML = `<p>Prime numbers up to ${maxNumber}: ${primeNumbers.join(', ')}</p>`;
+            } else {
+                document.getElementById("result").innerHTML = `<p>No prime numbers found up to ${maxNumber}.</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
