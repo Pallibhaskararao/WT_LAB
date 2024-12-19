@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop-up boxes</title>
+</head>
+
+<body>
+
+    <script>
+        alert("welcome to the calculator");
+        let a = parseInt(prompt("Enter a value : "));
+        let b = parseInt(prompt("Enter b value : "));
+        let op = prompt("Enter the operation (add,sub,mul,div,pow,mod)");
+        try {
+            switch (op) {
+                case "add": if (confirm(`the ${op} of ${a} and ${b} is ${a + b}`))
+                    break;
+                case "sub": if (confirm(`the ${op} of ${a} and ${b} is ${a - b}`))
+                    break;
+                case "mul": if (confirm(`the ${op} of ${a} and ${b} is ${a * b}`))
+                    break;
+                case "div": if (confirm(`the ${op} of ${a} and ${b} is ${a / b}`))
+                    break;
+                case "pow": if (confirm(`the ${op} of ${a} and ${b} is ${a ** b}`))
+                    break;
+                case "mod": if (confirm(`the ${op} of ${a} and ${b} is ${a % b}`))
+                    break;
+                default: prompt("Invalid operation");
+            }
+        }
+        catch (err) {
+            alert(err);
+        }
+    </script>
+</body>
+
+</html>

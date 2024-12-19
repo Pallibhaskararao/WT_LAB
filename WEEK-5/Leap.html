@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color : green;">Leap year check </h1>
+    <label style="color : black;">Enter year in (yyyy) : </label>
+    <input type="number" value="year" id="yy">
+    <button onclick="leapCheck()" id="btn"> check </button>
+    <script>
+        let yy = document.querySelector("#yy");
+        leapCheck = () => {
+            console.log(yy.value);
+        }
+    </script>
+</body>
+
+</html>
