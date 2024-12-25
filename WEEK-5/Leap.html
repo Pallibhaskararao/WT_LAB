@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leap Year</title>
+    <title>Leap Year Checker</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             text-align: center;
         }
-
-        button {
-            background-color: darksalmon;
+        h1 {
+            color: green;
+        }
+        label {
+            color: black;
         }
     </style>
 </head>
-
 <body>
-    <h1 style="color : green;">Leap year check </h1>
-    <label style="color : black;">Enter year in (yyyy) : </label>
-    <input type="number" value="year" id="yy">
-    <button onclick="leapCheck()" id="btn"> check </button>
+    <h1>Leap Year Checker</h1>
+    <form onsubmit="event.preventDefault(); checkLeapYear();">
+        <label for="yearInput">Enter a year (yyyy):</label>
+        <input type="number" id="yearInput" required>
+        <button type="submit">Check</button>
+    </form>
+    <p id="result"></p>
+
     <script>
-        let yy = document.querySelector("#yy");
-        leapCheck = () => {
-            console.log(yy.value);
+        function checkLeapYear() {
+            const year = parseInt(document.getElementById("yearInput").value);
+            let resultText;
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                resultText = `${year} is a leap year.`;
+            } else {
+                resultText = `${year} is not a leap year.`;
+            }
+
+            document.getElementById("result").innerText = resultText;
         }
     </script>
 </body>
-
 </html>
