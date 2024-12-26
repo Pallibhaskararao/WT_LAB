@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmStrong Number</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        #input:focus {
+            border: 3px solid yellow;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+
+        button:active {
+            background-color: aqua;
+        }
+
+        #result {
+            color: green;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> CHECK ARMSTRONG NUMBER </h1>
+    <label>Enter the number : </label>
+    <input type="text" id="input" name="input">
+    <button onclick=checkNumber()> Generate </button>
+    <p id="result"></p>
+
+    <script>
+        armstrongNum = (num, len) => {
+            let ans = 0;
+            while (num != 0) {
+                ans = ans + (num % 10) ** len;
+                num = parseInt(num / 10);
+            }
+            return ans;
+        }
+        checkNumber = () => {
+            let num = document.querySelector("#input").value;
+            let len = num.length;
+            num = parseInt(num);
+
+            if (num) {
+                if (num == armstrongNum(num, len)) {
+                    document.getElementById("result").innerText = ` ${num} IS ARMSTORNG NUMBER`;
+                }
+                else
+                    document.getElementById("result").innerText = ` ${num} IS NOT ARMSTORNG NUMBER`;
+            }
+            else {
+                alert("Enter a valid Number.")
+            }
+        }
+    </script>
+</body>
+
+</html>

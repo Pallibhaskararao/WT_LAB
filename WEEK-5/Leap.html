@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leap Year Checker</title>
+    <title>Leap Year</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             text-align: center;
         }
-        h1 {
-            color: green;
-        }
-        label {
-            color: black;
+
+        button {
+            background-color: darksalmon;
         }
     </style>
 </head>
+
 <body>
-    <h1>Leap Year Checker</h1>
-    <form onsubmit="event.preventDefault(); checkLeapYear();">
-        <label for="yearInput">Enter a year (yyyy):</label>
-        <input type="number" id="yearInput" required>
-        <button type="submit">Check</button>
-    </form>
-    <p id="result"></p>
+    <h1 style="color : green;">Leap year check </h1>
+    <label style="color : black;">Enter year in (yyyy) : </label>
+    <input type="number" value="year" id="yy">
+    <button onclick="leapCheck()" id="btn"> check </button>
+    <p id="result" style="color : green;"></p>
 
     <script>
-        function checkLeapYear() {
-            const year = parseInt(document.getElementById("yearInput").value);
-            let resultText;
+        function leapCheck() {
+            const yy = document.querySelector("#yy").value;
+            const resultElement = document.getElementById("result");
 
-            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-                resultText = `${year} is a leap year.`;
-            } else {
-                resultText = `${year} is not a leap year.`;
+            if (yy === "") {
+                resultElement.innerText = "Please enter a year.";
+                return;
             }
 
-            document.getElementById("result").innerText = resultText;
+            const year = parseInt(yy, 10);
+            const isLeapYear = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+
+            if (isLeapYear) {
+                resultElement.innerText = `The year ${year} is a leap year.`;
+            } else {
+                resultElement.innerText = `The year ${year} is not a leap year.`;
+            }
         }
     </script>
 </body>
+
 </html>

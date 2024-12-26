@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime number generate</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        #input:focus {
+            border: 3px solid yellow;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+
+        button:active {
+            background-color: aqua;
+        }
+
+        #result {
+            color: green;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PRIME NUMBERS </h1>
+    <label>Enter the number : </label>
+    <input type="text" id="input" name="input">
+    <button onclick=generatePrimes()> Generate </button>
+
+    <p id="result"></p>
+
+    <script>
+        checkPrime = (num) => {
+            for (let i = 2; i < Math.sqrt(num); i++) {
+                if (num % i === 0)
+                    return false;
+            }
+            return true;
+        }
+        generatePrimes = () => {
+            input = document.getElementById("input").value;
+            let num = parseInt(input);
+            let ans = [];
+            if (!isNaN(num)) {
+                while (num > 1) {
+                    console.log(num);
+                    if (checkPrime(num))
+                        ans.unshift(num);
+                    num = num - 1;
+                }
+            }
+            document.getElementById("result").innerText = ans.join(", ");
+        }
+
+    </script>
+</body>
+
+</html>
