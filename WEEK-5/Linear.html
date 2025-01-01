@@ -12,7 +12,7 @@
             text-align: center;
         }
 
-        h1 {
+        h1,h2,h3 {
             color: green;
         }
 
@@ -28,6 +28,11 @@
             background-color: aqua;
         }
 
+        .generate{
+            text-align: center;
+            background-color:gray;
+        }
+
         #result {
             color: green;
             font-size: 1.5rem;
@@ -36,36 +41,52 @@
 </head>
 
 <body>
-    <h1> CHECK ARMSTRONG NUMBER </h1>
-    <label>Enter the number : </label>
-    <input type="text" id="input" name="input">
-    <button onclick=checkNumber()> Generate </button>
-    <p id="result"></p>
+    <h1>LINEAR SERACH</h1>
+    <h2>Array of Elements</h2>
+    <P>The input is taken as space separted numbers</P>
+    <label>Enter the array of numbers : </label>
+    <input type="text" id="input1" name="input1"><br><br>
+    <button class = "generate" id = "b1" onclick=storeArray()> Generate </button>
+    <p id="result1"></p>
+    <br>
+    <h2>Searching Element</h2>
+    <label>Enter the searching number : </label>
+    <input type="text" id="input2" name="input2"><br><br>
+    <button class = "generate" id = "b2"  onclick=LinearSearch()> Generate </button>
+    <p id="result2"></p>
 
     <script>
-        armstrongNum = (num, len) => {
-            let ans = 0;
-            while (num != 0) {
-                ans = ans + (num % 10) ** len;
-                num = parseInt(num / 10);
+        let array = [];
+        storeArray = () => {
+            let input = document.querySelector("#input1").value;
+            let arr = input.split(" ").map(ele => parseInt(ele.trim()));
+            if (input === "") {
+                alert("Please enter some elements.");
+                return;
             }
-            return ans;
+            document.getElementById("result1").innerHTML = `<h4>The array of elements are ${arr}</h4>`;
+            array = arr;
         }
-        checkNumber = () => {
-            let num = document.querySelector("#input").value;
-            let len = num.length;
-            num = parseInt(num);
-
-            if (num) {
-                if (num == armstrongNum(num, len)) {
-                    document.getElementById("result").innerText = ` ${num} IS ARMSTORNG NUMBER`;
+        LinearSearch = () => {
+            let key = parseInt(document.getElementById("input2").value);
+            if(!array || array.length === 0)
+            {
+                alert("Enter the array of  elements");
+                return;
+            }
+            if(isNaN(key))
+            {
+                alert("Enter the searching element");
+                return;
+            }
+            for(let i = 0;i < array.length;i++)
+            {
+                if (array[i] === key) {
+                    document.getElementById("result2").innerHTML = `<h4>Element ${key} found at index ${i}</h4>`;
+                    return;
                 }
-                else
-                    document.getElementById("result").innerText = ` ${num} IS NOT ARMSTORNG NUMBER`;
             }
-            else {
-                alert("Enter a valid Number.")
-            }
+            document.getElementById("result2").innerHTML = `<h4>Element ${key} is not found</h4>`;
         }
     </script>
 </body>
